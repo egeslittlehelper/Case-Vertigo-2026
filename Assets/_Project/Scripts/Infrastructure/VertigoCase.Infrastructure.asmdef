@@ -1,0 +1,18 @@
+{
+    "name": "VertigoCase.Infrastructure",
+    "rootNamespace": "VertigoCase.Infrastructure",
+    "references": [
+        "VertigoCase.Core",
+        "VertigoCase.Data",
+        "VertigoCase.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
