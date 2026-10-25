@@ -4,7 +4,8 @@
     "references": [
         "VertigoCase.Core",
         "VertigoCase.Data",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "DOTween.Modules"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
