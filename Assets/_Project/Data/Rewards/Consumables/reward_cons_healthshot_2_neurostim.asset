@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab6fb84b7f38d047bca8fbf2596ddd4, type: 3}
+  m_Name: reward_cons_healthshot_2_neurostim
+  m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.RewardItemSO
+  _id: ui_icon_render_cons_healthshot_2_neurostim
+  _displayName: 
+  _category: 4
+  _icon: {fileID: 3833793503973785886, guid: dad6c5282d5602f44936fad050951469, type: 3}

@@ -2,7 +2,8 @@
     "name": "VertigoCase.Tests.EditMode",
     "rootNamespace": "VertigoCase.Tests",
     "references": [
-        "VertigoCase.Core"
+        "VertigoCase.Core",
+        "VertigoCase.Data"
     ],
     "includePlatforms": [
         "Editor"

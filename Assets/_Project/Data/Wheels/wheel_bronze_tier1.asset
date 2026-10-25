@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa9868233ca0224eb8d10f7bee61bc4, type: 3}
+  m_Name: wheel_bronze_tier1
+  m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.WheelConfigSO
+  _zoneType: 0
+  _slices: []
+  _wheelBaseSprite: {fileID: -7416167051008218582, guid: 1c53200bd35948f4997af1ade9d26496, type: 3}
+  _indicatorSprite: {fileID: 5759410588988491854, guid: 28cb77b6fea1bec478de3fee751e19c2, type: 3}
+  _titleText: SPIN
+  _titleColor: {r: 1, g: 1, b: 1, a: 1}

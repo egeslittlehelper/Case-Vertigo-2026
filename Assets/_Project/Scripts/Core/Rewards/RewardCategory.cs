@@ -8,6 +8,7 @@ namespace VertigoCase.Core
         Currency,
         Chest,
         Weapon,
+        Armor,
         Character,
         Consumable
     }
