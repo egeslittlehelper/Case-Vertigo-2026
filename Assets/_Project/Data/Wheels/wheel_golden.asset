@@ -14,35 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.WheelConfigSO
   _zoneType: 1
   _slices:
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: f7b8e19f90e54f34caadcfa930beefaa, type: 2}
+    _baseAmount: 7
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
+    _baseAmount: 7
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
+    _baseAmount: 7
+    _weight: 1
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
-    _baseAmount: 0
-    _weight: 0
-    _isBomb: 0
-  - _reward: {fileID: 0}
-    _baseAmount: 0
-    _weight: 0
-    _isBomb: 0
-  - _reward: {fileID: 0}
-    _baseAmount: 0
-    _weight: 0
-    _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0

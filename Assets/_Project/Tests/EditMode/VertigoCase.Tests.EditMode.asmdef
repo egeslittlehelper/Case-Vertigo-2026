@@ -3,7 +3,8 @@
     "rootNamespace": "VertigoCase.Tests",
     "references": [
         "VertigoCase.Core",
-        "VertigoCase.Data"
+        "VertigoCase.Data",
+        "VertigoCase.UI"
     ],
     "includePlatforms": [
         "Editor"

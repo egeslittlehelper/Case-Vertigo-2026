@@ -18,31 +18,31 @@ MonoBehaviour:
     _baseAmount: 0
     _weight: 0
     _isBomb: 1
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 0ee8521242b106248b0a30a1fb189cd1, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 83bc52e0f173e9e42a9a34aa5c85a28f, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 3aa600cc2ecd34e408f2143784120119, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: fa6c3afd54b5f304b84d6a68aeacf0a4, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: fa6c3afd54b5f304b84d6a68aeacf0a4, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0

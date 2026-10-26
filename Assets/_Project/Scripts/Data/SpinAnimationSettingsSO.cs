@@ -27,11 +27,20 @@ namespace VertigoCase.Data
         [SerializeField] [Range(0f, 5f)] [Tooltip("Scale punch on the indicator each tick.")]
         private float _tickPunchStrength = 0.15f;
 
+        [Header("Settle")]
+        [SerializeField] [Range(0f, 15f)] [Tooltip("Degrees the wheel overshoots past the target before settling.")]
+        private float _settleOvershoot = 5f;
+
+        [SerializeField] [Range(0.1f, 1f)] [Tooltip("Duration of the settle-back wobble.")]
+        private float _settleDuration = 0.4f;
+
         public float Duration => _duration;
         public int ExtraFullTurns => _extraFullTurns;
         public Ease SpinEase => _ease;
         public float LandingJitter => _landingJitter;
         public float ResultHoldTime => _resultHoldTime;
         public float TickPunchStrength => _tickPunchStrength;
+        public float SettleOvershoot => _settleOvershoot;
+        public float SettleDuration => _settleDuration;
     }
 }

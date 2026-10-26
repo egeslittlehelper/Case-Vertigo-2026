@@ -14,35 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.WheelConfigSO
   _zoneType: 2
   _slices:
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 0c6c0d499a5edf94297003f2b7618dfd, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
     _baseAmount: 0
     _weight: 0
     _isBomb: 0
