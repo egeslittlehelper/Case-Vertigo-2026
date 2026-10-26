@@ -12,8 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa9868233ca0224eb8d10f7bee61bc4, type: 3}
   m_Name: wheel_golden
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.WheelConfigSO
-  _zoneType: 0
-  _slices: []
+  _zoneType: 1
+  _slices:
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
+  - _reward: {fileID: 0}
+    _baseAmount: 0
+    _weight: 0
+    _isBomb: 0
   _wheelBaseSprite: {fileID: 5770997025872212153, guid: 0db21750281f93e4cac3a21406203798, type: 3}
   _indicatorSprite: {fileID: 8294000708589155680, guid: 103edf8018e621045be6ae8e20cbb1c9, type: 3}
   _titleText: SPIN

@@ -4,7 +4,8 @@
     "references": [
         "VertigoCase.Core",
         "VertigoCase.Data",
-        "VertigoCase.UI"
+        "VertigoCase.UI",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [
         "Editor"
