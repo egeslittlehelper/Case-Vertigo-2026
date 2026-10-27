@@ -491,7 +491,6 @@ GameObject:
   - component: {fileID: 255737506942578600}
   - component: {fileID: 470807473446073892}
   - component: {fileID: 8344616541275773558}
-  - component: {fileID: 1944255688470793298}
   m_Layer: 0
   m_Name: ui_panel_wheel
   m_TagString: Untagged
@@ -545,7 +544,7 @@ MonoBehaviour:
   _sliceFactory: {fileID: 8344616541275773558}
   _animTarget: {fileID: 4099406230037316814}
   _sliceContentRadius: 195
-  _spinSettings: {fileID: 0}
+  _spinSettings: {fileID: 11400000, guid: 75d6aa17ff25b3340a4b355df4c110d8, type: 2}
 --- !u!114 &8344616541275773558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,22 +559,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: VertigoCase.UI::VertigoCase.UI.SliceViewFactory
   _slicePrefab: {fileID: 7427039172093422050, guid: ee15eb93783b95f4cbfe384d37bd78b3, type: 3}
   _container: {fileID: 6908221113560604042}
---- !u!114 &1944255688470793298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950579537452352208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bf74a59d038b1a49aa45763122baf89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: VertigoCase.UI::VertigoCase.UI.WheelViewSandbox
-  _testWheel: {fileID: 11400000, guid: ef5671800be37ad4c85a75f184be096e, type: 2}
-  _catalog: {fileID: 11400000, guid: a91e419327443d8498d057254390c0e2, type: 2}
-  _testZone: 1
-  _targetSlice: 3
 --- !u!1 &8371533910230686159
 GameObject:
   m_ObjectHideFlags: 0

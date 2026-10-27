@@ -72,6 +72,18 @@ namespace VertigoCase.Tests
         }
 
         [Test]
+        public void GetNextZoneOfType_Super_FromZone29_Returns30()
+        {
+            Assert.AreEqual(30, _rules.GetNextZoneOfType(29, ZoneType.Super));
+        }
+
+        [Test]
+        public void GetNextZoneOfType_Safe_FromZone30_Returns35()
+        {
+            Assert.AreEqual(35, _rules.GetNextZoneOfType(30, ZoneType.Safe));
+        }
+
+        [Test]
         public void GetNextZoneOfType_Normal_Throws()
         {
             Assert.Throws<ArgumentException>(() => _rules.GetNextZoneOfType(1, ZoneType.Normal));

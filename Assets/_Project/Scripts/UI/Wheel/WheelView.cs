@@ -31,6 +31,7 @@ namespace VertigoCase.UI
         [SerializeField] private SpinAnimationSettingsSO _spinSettings;
 
         private Sequence _spinSequence;
+        private Sequence _transitionSequence;
         private WheelSliceView[] _slices;
         private int _sliceCount;
 
@@ -138,6 +139,33 @@ namespace VertigoCase.UI
             _spinSequence.SetLink(gameObject);
         }
 
+        public void TransitionTo(IWheelDefinition wheel, WheelConfigSO visuals, int zone,
+            IRewardScaling scaling, RewardCatalogSO catalog)
+        {
+            if (_animTarget == null)
+            {
+                Bind(wheel, visuals, zone, scaling, catalog);
+                return;
+            }
+
+            _transitionSequence?.Kill();
+            _transitionSequence = DOTween.Sequence();
+
+            _transitionSequence.Append(
+                _animTarget.DOScale(0f, 0.2f).SetEase(Ease.InBack));
+
+            _transitionSequence.AppendCallback(() =>
+            {
+                NormalizeRotation();
+                Bind(wheel, visuals, zone, scaling, catalog);
+            });
+
+            _transitionSequence.Append(
+                _animTarget.DOScale(1f, 0.3f).SetEase(Ease.OutBack));
+
+            _transitionSequence.SetLink(gameObject);
+        }
+
         public void SetInteractable(bool interactable)
         {
             if (_spinButton != null)
@@ -179,6 +207,8 @@ namespace VertigoCase.UI
 
             _spinSequence?.Kill();
             _spinSequence = null;
+            _transitionSequence?.Kill();
+            _transitionSequence = null;
         }
 
         private void HandleSpinClicked()

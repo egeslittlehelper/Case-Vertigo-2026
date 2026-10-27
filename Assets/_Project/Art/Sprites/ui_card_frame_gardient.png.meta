@@ -130,12 +130,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 171
-        width: 42
-        height: 85
+        y: 0
+        width: 128
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 42, y: 42, z: 42, w: 42}
       customData: 
       outline: []
       physicsShape: []
@@ -143,182 +143,6 @@ TextureImporter:
       bones: []
       spriteID: dd9d3a6633bdd5900800000000000000
       internalID: 674936532987271645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 171
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 790aec79ac72dd74f87bd7706c3e98d7
-      internalID: 1301733948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_2
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 171
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89502afda6f433446a2c51b53e8c3e36
-      internalID: 1317568639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 86
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 718586d91d0f9d144bc948968e2060fb
-      internalID: 458767654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_4
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 86
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eeee65e6c74f70441b0645fba73a5181
-      internalID: 255001933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_5
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 86
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2782d670698ee8409917aa2d8c7d709
-      internalID: 34669382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 339a7be14625e844e9579f60ad3d5bb9
-      internalID: 930818927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_7
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 1
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54980ea8b6729494eb97f5429933004d
-      internalID: -1811230539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ui_card_frame_gardient_8
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 1
-        width: 42
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b07da2b380c7f242940be6dc4fb4015
-      internalID: -2037460787
       vertices: []
       indices: 
       edges: []
@@ -337,17 +161,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":42.0,"y":85.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       ui_card_frame_gardient_0: 674936532987271645
-      ui_card_frame_gardient_1: 1301733948
-      ui_card_frame_gardient_2: 1317568639
-      ui_card_frame_gardient_3: 458767654
-      ui_card_frame_gardient_4: 255001933
-      ui_card_frame_gardient_5: 34669382
-      ui_card_frame_gardient_6: 930818927
-      ui_card_frame_gardient_7: -1811230539
-      ui_card_frame_gardient_8: -2037460787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
