@@ -38,6 +38,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _normalTiers: []
+  _normalTiers:
+  - _minZone: 0
+    _wheel: {fileID: 0}
+  - _minZone: 0
+    _wheel: {fileID: 0}
   _safeWheel: {fileID: 0}
   _superWheel: {fileID: 0}
