@@ -15,36 +15,36 @@ MonoBehaviour:
   _zoneType: 0
   _slices:
   - _reward: {fileID: 0}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 1
   - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   _wheelBaseSprite: {fileID: -7416167051008218582, guid: 1c53200bd35948f4997af1ade9d26496, type: 3}
   _indicatorSprite: {fileID: 5759410588988491854, guid: 28cb77b6fea1bec478de3fee751e19c2, type: 3}

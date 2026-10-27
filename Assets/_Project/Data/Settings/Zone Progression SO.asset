@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zone Progression SO
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.ZoneProgressionSO
   _safeInterval: 5
-  _superInterval: 30
+  _superInterval: 6
   _rewardMultiplier:
     serializedVersion: 2
     m_Curve:
@@ -39,9 +39,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _normalTiers:
-  - _minZone: 0
-    _wheel: {fileID: 0}
-  - _minZone: 0
-    _wheel: {fileID: 0}
-  _safeWheel: {fileID: 0}
-  _superWheel: {fileID: 0}
+  - _minZone: 1
+    _wheel: {fileID: 11400000, guid: 15d91d93cb3bb844480c688d57bedf6a, type: 2}
+  - _minZone: 5
+    _wheel: {fileID: 11400000, guid: 6faba39acd977f84bbed54ecb489c70d, type: 2}
+  _safeWheel: {fileID: 11400000, guid: 8d991bfcd23d7a54d9073ecaa4d5fe60, type: 2}
+  _superWheel: {fileID: 11400000, guid: ef5671800be37ad4c85a75f184be096e, type: 2}

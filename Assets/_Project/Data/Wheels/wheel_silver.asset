@@ -15,36 +15,36 @@ MonoBehaviour:
   _zoneType: 2
   _slices:
   - _reward: {fileID: 11400000, guid: 0c6c0d499a5edf94297003f2b7618dfd, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 0
-    _weight: 0
+    _baseAmount: 1
+    _weight: 1
     _isBomb: 0
   _wheelBaseSprite: {fileID: -4250264824657568362, guid: 133f9066f4575374c9560a407d958dc1, type: 3}
   _indicatorSprite: {fileID: 2528496851094761378, guid: a66f3f292a0e3504c995ce18a36b1db0, type: 3}
