@@ -25,6 +25,9 @@ namespace VertigoCase.UI
         private readonly IZoneRules _zoneRules;
         private readonly IRewardScaling _scaling;
         private readonly RewardCatalogSO _catalog;
+        private readonly IWallet _wallet;
+        private readonly WalletView _walletView;
+        private readonly string _currencyId;
 
         private ZoneType _previousZoneType;
 
@@ -41,7 +44,10 @@ namespace VertigoCase.UI
             CashOutPopupView cashOutPopup,
             IZoneRules zoneRules,
             IRewardScaling scaling,
-            RewardCatalogSO catalog)
+            RewardCatalogSO catalog,
+            IWallet wallet = null,
+            WalletView walletView = null,
+            string currencyId = null)
         {
             _session = session ?? throw new ArgumentNullException(nameof(session));
             _wheelView = wheelView ?? throw new ArgumentNullException(nameof(wheelView));
@@ -56,6 +62,9 @@ namespace VertigoCase.UI
             _zoneRules = zoneRules;
             _scaling = scaling;
             _catalog = catalog;
+            _wallet = wallet;
+            _walletView = walletView;
+            _currencyId = currencyId ?? "";
         }
 
         public void Initialize()
@@ -65,12 +74,16 @@ namespace VertigoCase.UI
             _session.RewardCollected += OnRewardCollected;
             _session.BombHit += OnBombHit;
             _session.CashedOut += OnCashedOut;
+            _session.Revived += OnRevived;
             _session.RunReset += OnRunReset;
 
             if (_exitButton != null)
                 _exitButton.Clicked += OnExitClicked;
             if (_bombPopup != null)
+            {
                 _bombPopup.GiveUpClicked += OnGiveUpRequested;
+                _bombPopup.ReviveClicked += OnReviveClicked;
+            }
             if (_confirmLossPopup != null)
             {
                 _confirmLossPopup.LoseClicked += OnConfirmLose;
@@ -78,6 +91,9 @@ namespace VertigoCase.UI
             }
             if (_cashOutPopup != null)
                 _cashOutPopup.ContinueClicked += OnContinue;
+
+            if (_wallet != null)
+                _wallet.BalanceChanged += OnBalanceChanged;
 
             int zone = _session.CurrentZone;
             _previousZoneType = _session.CurrentZoneType;
@@ -97,6 +113,14 @@ namespace VertigoCase.UI
             if (_exitButton != null)
                 _exitButton.SetVisible(_session.CanExit, animate: false);
 
+            if (_walletView != null && _wallet != null)
+            {
+                _walletView.SetBalance(_wallet.Balance, animate: false);
+
+                if (!string.IsNullOrEmpty(_currencyId) && _catalog.TryGetIcon(_currencyId, out Sprite icon))
+                    _walletView.SetIcon(icon);
+            }
+
             UpdateZoneInfo(zone);
             BindWheel(zone, animate: false);
         }
@@ -108,12 +132,16 @@ namespace VertigoCase.UI
             _session.RewardCollected -= OnRewardCollected;
             _session.BombHit -= OnBombHit;
             _session.CashedOut -= OnCashedOut;
+            _session.Revived -= OnRevived;
             _session.RunReset -= OnRunReset;
 
             if (_exitButton != null)
                 _exitButton.Clicked -= OnExitClicked;
             if (_bombPopup != null)
+            {
                 _bombPopup.GiveUpClicked -= OnGiveUpRequested;
+                _bombPopup.ReviveClicked -= OnReviveClicked;
+            }
             if (_confirmLossPopup != null)
             {
                 _confirmLossPopup.LoseClicked -= OnConfirmLose;
@@ -121,6 +149,9 @@ namespace VertigoCase.UI
             }
             if (_cashOutPopup != null)
                 _cashOutPopup.ContinueClicked -= OnContinue;
+
+            if (_wallet != null)
+                _wallet.BalanceChanged -= OnBalanceChanged;
         }
 
         private void OnSpinClicked()
@@ -187,10 +218,7 @@ namespace VertigoCase.UI
             _wheelView.SetInteractable(false);
 
             if (_bombPopup != null)
-            {
-                int lostCount = _session.CollectedRewards.Count;
-                _bombPopup.Show(lostCount, canRevive: false, reviveCost: 0);
-            }
+                ShowBombPopup();
         }
 
         private void OnCashedOut(IReadOnlyList<RewardStack> rewards)
@@ -237,12 +265,37 @@ namespace VertigoCase.UI
                 _confirmLossPopup.Hide(() =>
                 {
                     if (_bombPopup != null)
-                    {
-                        int lostCount = _session.CollectedRewards.Count;
-                        _bombPopup.Show(lostCount, canRevive: false, reviveCost: 0);
-                    }
+                        ShowBombPopup();
                 });
             }
+        }
+
+        private void OnReviveClicked()
+        {
+            if (_bombPopup != null)
+                _bombPopup.Hide(() => _session.TryRevive());
+        }
+
+        private void OnRevived()
+        {
+            if (_exitButton != null)
+                _exitButton.SetVisible(_session.CanExit, animate: true);
+
+            BindWheel(_session.CurrentZone, animate: false);
+        }
+
+        private void OnBalanceChanged(int newBalance)
+        {
+            if (_walletView != null)
+                _walletView.SetBalance(newBalance, animate: true);
+        }
+
+        private void ShowBombPopup()
+        {
+            int lostCount = _session.CollectedRewards.Count;
+            bool canRevive = _session.CanRevive;
+            int cost = _session.ReviveCost;
+            _bombPopup.Show(lostCount, canRevive, cost);
         }
 
         private void OnContinue()

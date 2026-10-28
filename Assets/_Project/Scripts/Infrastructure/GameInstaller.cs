@@ -15,6 +15,7 @@ namespace VertigoCase.Infrastructure
         [SerializeField] private ZoneProgressionSO _zoneProgression;
         [SerializeField] private RewardCatalogSO _rewardCatalog;
         [SerializeField] private SpinAnimationSettingsSO _spinSettings;
+        [SerializeField] private EconomySettingsSO _economySettings;
 
         [Header("Views")]
         [SerializeField] private WheelView _wheelView;
@@ -22,6 +23,7 @@ namespace VertigoCase.Infrastructure
         [SerializeField] private ZoneInfoView _zoneInfo;
         [SerializeField] private CollectedRewardsView _rewardsView;
         [SerializeField] private RewardFlyAnimator _flyAnimator;
+        [SerializeField] private WalletView _walletView;
 
         [Header("Flow")]
         [SerializeField] private ExitButtonView _exitButton;
@@ -44,13 +46,27 @@ namespace VertigoCase.Infrastructure
             var spinResolver = new SpinResolver(random, scaling);
             var inventory = new RewardInventory();
 
-            var session = new GameSession(zoneRules, wheelProvider, spinResolver, inventory);
+            IWallet wallet = null;
+            IReviveCostPolicy reviveCostPolicy = null;
+            string currencyId = null;
+
+            if (_economySettings != null)
+            {
+                wallet = new PlayerPrefsWallet(_economySettings.StartingBalance);
+                reviveCostPolicy = _economySettings.CreateReviveCostPolicy();
+                currencyId = _economySettings.CurrencyId;
+            }
+
+            var session = new GameSession(
+                zoneRules, wheelProvider, spinResolver, inventory,
+                wallet, reviveCostPolicy, currencyId);
 
             _presenter = new GamePresenter(
                 session, _wheelView, _zoneBar, _zoneInfo,
                 _rewardsView, _flyAnimator,
                 _exitButton, _bombPopup, _confirmLossPopup, _cashOutPopup,
-                zoneRules, scaling, _rewardCatalog);
+                zoneRules, scaling, _rewardCatalog,
+                wallet, _walletView, currencyId);
             _presenter.Initialize();
         }
 

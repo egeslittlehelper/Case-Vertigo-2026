@@ -13,8 +13,12 @@ namespace VertigoCase.Core
         private readonly SpinResolver _spinResolver;
         private readonly RewardInventory _inventory;
         private readonly GameStateMachine _stateMachine;
+        private readonly IWallet _wallet;
+        private readonly IReviveCostPolicy _reviveCostPolicy;
+        private readonly string _currencyId;
 
         private SpinResult? _pendingResult;
+        private int _reviveCount;
 
         public int CurrentZone { get; private set; }
         public ZoneType CurrentZoneType => _zoneRules.GetZoneType(CurrentZone);
@@ -24,25 +28,37 @@ namespace VertigoCase.Core
 
         public bool CanSpin => State == GameState.Idle;
         public bool CanExit => State == GameState.Idle && CurrentZoneType != ZoneType.Normal;
+        public bool CanRevive => State == GameState.BombHit && _wallet != null
+                                 && _wallet.CanAfford(ReviveCost);
+        public int ReviveCost => _reviveCostPolicy != null
+            ? _reviveCostPolicy.GetCost(_reviveCount, CurrentZone)
+            : 0;
 
         public event Action<int, ZoneType> ZoneChanged;
         public event Action<SpinResult> SpinStarted;
         public event Action<SpinResult> RewardCollected;
         public event Action<SpinResult> BombHit;
         public event Action<IReadOnlyList<RewardStack>> CashedOut;
+        public event Action Revived;
         public event Action RunReset;
 
         public GameSession(
             IZoneRules zoneRules,
             IWheelProvider wheelProvider,
             SpinResolver spinResolver,
-            RewardInventory inventory)
+            RewardInventory inventory,
+            IWallet wallet = null,
+            IReviveCostPolicy reviveCostPolicy = null,
+            string currencyId = null)
         {
             _zoneRules = zoneRules ?? throw new ArgumentNullException(nameof(zoneRules));
             _wheelProvider = wheelProvider ?? throw new ArgumentNullException(nameof(wheelProvider));
             _spinResolver = spinResolver ?? throw new ArgumentNullException(nameof(spinResolver));
             _inventory = inventory ?? throw new ArgumentNullException(nameof(inventory));
             _stateMachine = new GameStateMachine();
+            _wallet = wallet;
+            _reviveCostPolicy = reviveCostPolicy;
+            _currencyId = currencyId ?? "";
 
             CurrentZone = 1;
             RefreshWheel();
@@ -93,12 +109,29 @@ namespace VertigoCase.Core
             }
         }
 
+        public bool TryRevive()
+        {
+            if (!CanRevive) return false;
+
+            int cost = ReviveCost;
+            if (!_wallet.TrySpend(cost)) return false;
+
+            _reviveCount++;
+            CurrentZone++;
+            RefreshWheel();
+            _stateMachine.TransitionTo(GameState.Idle);
+            Revived?.Invoke();
+            ZoneChanged?.Invoke(CurrentZone, CurrentZoneType);
+            return true;
+        }
+
         public void CashOut()
         {
             if (!CanExit)
                 throw new InvalidOperationException(
                     "Can only cash out while idle in a Safe or Super zone.");
 
+            DepositCurrency();
             var rewards = new List<RewardStack>(_inventory.Items);
             _stateMachine.TransitionTo(GameState.CashedOut);
             CashedOut?.Invoke(rewards);
@@ -124,11 +157,26 @@ namespace VertigoCase.Core
         {
             _inventory.Clear();
             _pendingResult = null;
+            _reviveCount = 0;
             CurrentZone = 1;
             RefreshWheel();
 
             _stateMachine.ForceReset();
             RunReset?.Invoke();
+        }
+
+        private void DepositCurrency()
+        {
+            if (_wallet == null || string.IsNullOrEmpty(_currencyId)) return;
+
+            int total = 0;
+            foreach (var stack in _inventory.Items)
+            {
+                if (stack.Reward != null && stack.Reward.Id == _currencyId)
+                    total += stack.Amount;
+            }
+            if (total > 0)
+                _wallet.Add(total);
         }
 
         private void RefreshWheel()
