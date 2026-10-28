@@ -16,7 +16,7 @@ MonoBehaviour:
   _slices:
   - _reward: {fileID: 0}
     _baseAmount: 1
-    _weight: 1
+    _weight: 1000
     _isBomb: 1
   - _reward: {fileID: 11400000, guid: 0ee8521242b106248b0a30a1fb189cd1, type: 2}
     _baseAmount: 1
@@ -48,5 +48,5 @@ MonoBehaviour:
     _isBomb: 0
   _wheelBaseSprite: {fileID: -7416167051008218582, guid: 1c53200bd35948f4997af1ade9d26496, type: 3}
   _indicatorSprite: {fileID: 5759410588988491854, guid: 28cb77b6fea1bec478de3fee751e19c2, type: 3}
-  _titleText: SPIN
+  _titleText: Bronze
   _titleColor: {r: 1, g: 1, b: 1, a: 1}

@@ -23,6 +23,12 @@ namespace VertigoCase.Infrastructure
         [SerializeField] private CollectedRewardsView _rewardsView;
         [SerializeField] private RewardFlyAnimator _flyAnimator;
 
+        [Header("Flow")]
+        [SerializeField] private ExitButtonView _exitButton;
+        [SerializeField] private BombPopupView _bombPopup;
+        [SerializeField] private ConfirmLossPopupView _confirmLossPopup;
+        [SerializeField] private CashOutPopupView _cashOutPopup;
+
         private GamePresenter _presenter;
 
         private void Awake()
@@ -43,6 +49,7 @@ namespace VertigoCase.Infrastructure
             _presenter = new GamePresenter(
                 session, _wheelView, _zoneBar, _zoneInfo,
                 _rewardsView, _flyAnimator,
+                _exitButton, _bombPopup, _confirmLossPopup, _cashOutPopup,
                 zoneRules, scaling, _rewardCatalog);
             _presenter.Initialize();
         }

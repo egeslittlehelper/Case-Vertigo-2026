@@ -18,6 +18,10 @@ namespace VertigoCase.UI
         private readonly ZoneInfoView _zoneInfo;
         private readonly CollectedRewardsView _rewardsView;
         private readonly RewardFlyAnimator _flyAnimator;
+        private readonly ExitButtonView _exitButton;
+        private readonly BombPopupView _bombPopup;
+        private readonly ConfirmLossPopupView _confirmLossPopup;
+        private readonly CashOutPopupView _cashOutPopup;
         private readonly IZoneRules _zoneRules;
         private readonly IRewardScaling _scaling;
         private readonly RewardCatalogSO _catalog;
@@ -31,6 +35,10 @@ namespace VertigoCase.UI
             ZoneInfoView zoneInfo,
             CollectedRewardsView rewardsView,
             RewardFlyAnimator flyAnimator,
+            ExitButtonView exitButton,
+            BombPopupView bombPopup,
+            ConfirmLossPopupView confirmLossPopup,
+            CashOutPopupView cashOutPopup,
             IZoneRules zoneRules,
             IRewardScaling scaling,
             RewardCatalogSO catalog)
@@ -41,6 +49,10 @@ namespace VertigoCase.UI
             _zoneInfo = zoneInfo;
             _rewardsView = rewardsView;
             _flyAnimator = flyAnimator;
+            _exitButton = exitButton;
+            _bombPopup = bombPopup;
+            _confirmLossPopup = confirmLossPopup;
+            _cashOutPopup = cashOutPopup;
             _zoneRules = zoneRules;
             _scaling = scaling;
             _catalog = catalog;
@@ -55,6 +67,18 @@ namespace VertigoCase.UI
             _session.CashedOut += OnCashedOut;
             _session.RunReset += OnRunReset;
 
+            if (_exitButton != null)
+                _exitButton.Clicked += OnExitClicked;
+            if (_bombPopup != null)
+                _bombPopup.GiveUpClicked += OnGiveUpRequested;
+            if (_confirmLossPopup != null)
+            {
+                _confirmLossPopup.LoseClicked += OnConfirmLose;
+                _confirmLossPopup.GoBackClicked += OnConfirmGoBack;
+            }
+            if (_cashOutPopup != null)
+                _cashOutPopup.ContinueClicked += OnContinue;
+
             int zone = _session.CurrentZone;
             _previousZoneType = _session.CurrentZoneType;
 
@@ -66,6 +90,12 @@ namespace VertigoCase.UI
 
             if (_flyAnimator != null)
                 _flyAnimator.Initialize();
+
+            if (_cashOutPopup != null)
+                _cashOutPopup.Initialize();
+
+            if (_exitButton != null)
+                _exitButton.SetVisible(_session.CanExit, animate: false);
 
             UpdateZoneInfo(zone);
             BindWheel(zone, animate: false);
@@ -79,11 +109,26 @@ namespace VertigoCase.UI
             _session.BombHit -= OnBombHit;
             _session.CashedOut -= OnCashedOut;
             _session.RunReset -= OnRunReset;
+
+            if (_exitButton != null)
+                _exitButton.Clicked -= OnExitClicked;
+            if (_bombPopup != null)
+                _bombPopup.GiveUpClicked -= OnGiveUpRequested;
+            if (_confirmLossPopup != null)
+            {
+                _confirmLossPopup.LoseClicked -= OnConfirmLose;
+                _confirmLossPopup.GoBackClicked -= OnConfirmGoBack;
+            }
+            if (_cashOutPopup != null)
+                _cashOutPopup.ContinueClicked -= OnContinue;
         }
 
         private void OnSpinClicked()
         {
             if (!_session.CanSpin) return;
+
+            if (_exitButton != null)
+                _exitButton.SetVisible(false, animate: false);
 
             SpinResult result = _session.BeginSpin();
             _wheelView.SetInteractable(false);
@@ -101,6 +146,9 @@ namespace VertigoCase.UI
             _previousZoneType = type;
 
             BindWheel(zone, animate: typeChanged);
+
+            if (_exitButton != null)
+                _exitButton.SetVisible(_session.CanExit, animate: true);
         }
 
         private void OnRewardCollected(SpinResult result)
@@ -136,13 +184,71 @@ namespace VertigoCase.UI
 
         private void OnBombHit(SpinResult result)
         {
-            Debug.Log("[Presenter] Bomb hit! Rewards lost. (Popup in CP10)");
             _wheelView.SetInteractable(false);
+
+            if (_bombPopup != null)
+            {
+                int lostCount = _session.CollectedRewards.Count;
+                _bombPopup.Show(lostCount, canRevive: false, reviveCost: 0);
+            }
         }
 
         private void OnCashedOut(IReadOnlyList<RewardStack> rewards)
         {
-            Debug.Log($"[Presenter] Cashed out with {rewards.Count} reward type(s). (Popup in CP10)");
+            _wheelView.SetInteractable(false);
+
+            if (_exitButton != null)
+                _exitButton.SetVisible(false, animate: false);
+
+            if (_cashOutPopup != null)
+                _cashOutPopup.Show(rewards, _catalog);
+        }
+
+        private void OnExitClicked()
+        {
+            if (!_session.CanExit) return;
+            _session.CashOut();
+        }
+
+        private void OnGiveUpRequested()
+        {
+            if (_confirmLossPopup != null)
+            {
+                if (_bombPopup != null)
+                    _bombPopup.Hide(() => _confirmLossPopup.Show());
+            }
+            else
+            {
+                if (_bombPopup != null)
+                    _bombPopup.Hide(() => _session.GiveUp());
+            }
+        }
+
+        private void OnConfirmLose()
+        {
+            if (_confirmLossPopup != null)
+                _confirmLossPopup.Hide(() => _session.GiveUp());
+        }
+
+        private void OnConfirmGoBack()
+        {
+            if (_confirmLossPopup != null)
+            {
+                _confirmLossPopup.Hide(() =>
+                {
+                    if (_bombPopup != null)
+                    {
+                        int lostCount = _session.CollectedRewards.Count;
+                        _bombPopup.Show(lostCount, canRevive: false, reviveCost: 0);
+                    }
+                });
+            }
+        }
+
+        private void OnContinue()
+        {
+            if (_cashOutPopup != null)
+                _cashOutPopup.Hide(() => _session.Restart());
         }
 
         private void OnRunReset()
@@ -155,6 +261,9 @@ namespace VertigoCase.UI
 
             if (_rewardsView != null)
                 _rewardsView.ClearAll();
+
+            if (_exitButton != null)
+                _exitButton.SetVisible(_session.CanExit, animate: false);
 
             UpdateZoneInfo(zone);
             BindWheel(zone, animate: false);

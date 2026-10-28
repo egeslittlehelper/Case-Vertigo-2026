@@ -34,9 +34,9 @@ RectTransform:
   - {fileID: 5844001201488583998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -12}
   m_SizeDelta: {x: -16, y: 140}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &5457382487966152773
@@ -54,11 +54,11 @@ MonoBehaviour:
   _root: {fileID: 380498956576928939}
   _cellContainer: {fileID: 1674490738053319425}
   _cellPrefab: {fileID: 2799944201611395404, guid: 9d2a00c2fda3c8e4e8ffa8a45a86b358, type: 3}
-  _colors: {fileID: 11400000, guid: 9995634f8957fc04db6fa7f8a9db4495, type: 2}
+  _colors: {fileID: 0}
   _highlightImage: {fileID: 5859207230403310024}
-  _highlightNormal: {fileID: 1573110252887166051, guid: 34dddf0a02bccf344af027eece5c71c1, type: 3}
-  _highlightSafe: {fileID: -2138075857442394677, guid: 38591c4f1ad8aec4c910daaf41635b8d, type: 3}
-  _highlightSuper: {fileID: 21300000, guid: 7cc5c2faed4527d4c8c5a5a9937da802, type: 3}
+  _highlightNormal: {fileID: 0}
+  _highlightSafe: {fileID: 0}
+  _highlightSuper: {fileID: 0}
   _visibleCount: 13
   _slideDuration: 0.3
 --- !u!1 &3561732416306317053
