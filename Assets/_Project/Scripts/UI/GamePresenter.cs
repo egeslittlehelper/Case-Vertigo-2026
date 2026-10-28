@@ -16,6 +16,8 @@ namespace VertigoCase.UI
         private readonly WheelView _wheelView;
         private readonly ZoneBarView _zoneBar;
         private readonly ZoneInfoView _zoneInfo;
+        private readonly CollectedRewardsView _rewardsView;
+        private readonly RewardFlyAnimator _flyAnimator;
         private readonly IZoneRules _zoneRules;
         private readonly IRewardScaling _scaling;
         private readonly RewardCatalogSO _catalog;
@@ -27,6 +29,8 @@ namespace VertigoCase.UI
             WheelView wheelView,
             ZoneBarView zoneBar,
             ZoneInfoView zoneInfo,
+            CollectedRewardsView rewardsView,
+            RewardFlyAnimator flyAnimator,
             IZoneRules zoneRules,
             IRewardScaling scaling,
             RewardCatalogSO catalog)
@@ -35,6 +39,8 @@ namespace VertigoCase.UI
             _wheelView = wheelView ?? throw new ArgumentNullException(nameof(wheelView));
             _zoneBar = zoneBar;
             _zoneInfo = zoneInfo;
+            _rewardsView = rewardsView;
+            _flyAnimator = flyAnimator;
             _zoneRules = zoneRules;
             _scaling = scaling;
             _catalog = catalog;
@@ -54,6 +60,12 @@ namespace VertigoCase.UI
 
             if (_zoneBar != null)
                 _zoneBar.Initialize(zone, _zoneRules);
+
+            if (_rewardsView != null)
+                _rewardsView.Initialize();
+
+            if (_flyAnimator != null)
+                _flyAnimator.Initialize();
 
             UpdateZoneInfo(zone);
             BindWheel(zone, animate: false);
@@ -93,7 +105,33 @@ namespace VertigoCase.UI
 
         private void OnRewardCollected(SpinResult result)
         {
-            Debug.Log($"[Presenter] Collected: {result.Reward?.Id} x{result.Amount}");
+            if (result.Reward == null || _rewardsView == null) return;
+
+            string id = result.Reward.Id;
+            _catalog.TryGetIcon(id, out Sprite icon);
+
+            int newTotal = GetCurrentTotal(id);
+
+            if (_flyAnimator != null)
+            {
+                RectTransform from = _wheelView.GetSliceTransform(result.SliceIndex);
+
+                _rewardsView.AddOrUpdate(id, icon, newTotal - result.Amount, animate: false);
+                RectTransform to = _rewardsView.GetEntryTarget(id);
+
+                if (from != null && to != null)
+                {
+                    _flyAnimator.Play(icon, from, to, () =>
+                    {
+                        _rewardsView.AddOrUpdate(id, icon, newTotal, animate: true);
+                        _wheelView.SetInteractable(_session.CanSpin);
+                    });
+                    return;
+                }
+            }
+
+            _rewardsView.AddOrUpdate(id, icon, newTotal, animate: true);
+            _wheelView.SetInteractable(_session.CanSpin);
         }
 
         private void OnBombHit(SpinResult result)
@@ -114,6 +152,9 @@ namespace VertigoCase.UI
 
             if (_zoneBar != null)
                 _zoneBar.AdvanceTo(zone, animate: false);
+
+            if (_rewardsView != null)
+                _rewardsView.ClearAll();
 
             UpdateZoneInfo(zone);
             BindWheel(zone, animate: false);
@@ -139,6 +180,17 @@ namespace VertigoCase.UI
             int nextSafe = _zoneRules.GetNextZoneOfType(zone, ZoneType.Safe);
             int nextSuper = _zoneRules.GetNextZoneOfType(zone, ZoneType.Super);
             _zoneInfo.Set(nextSafe, nextSuper);
+        }
+
+        private int GetCurrentTotal(string rewardId)
+        {
+            var items = _session.CollectedRewards;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (string.Equals(items[i].Reward.Id, rewardId, StringComparison.Ordinal))
+                    return items[i].Amount;
+            }
+            return 0;
         }
     }
 }

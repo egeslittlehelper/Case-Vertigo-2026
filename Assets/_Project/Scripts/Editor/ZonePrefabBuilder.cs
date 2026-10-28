@@ -32,7 +32,7 @@ namespace VertigoCase.Editor
             var root = CreateUI("ui_zone_cell");
             root.AddComponent<ZoneCellView>();
             var rootRt = root.GetComponent<RectTransform>();
-            rootRt.sizeDelta = new Vector2(100f, 80f);
+            rootRt.sizeDelta = new Vector2(140f, 120f);
 
             var textObj = CreateUIChild(root, "ui_text_zone_number_value");
             var tmp = textObj.AddComponent<TextMeshProUGUI>();
@@ -40,7 +40,7 @@ namespace VertigoCase.Editor
             tmp.maskable = false;
             tmp.text = "1";
             tmp.alignment = TextAlignmentOptions.Center;
-            tmp.fontSize = 36f;
+            tmp.fontSize = 56f;
             tmp.fontStyle = FontStyles.Bold;
             var textRt = textObj.GetComponent<RectTransform>();
             textRt.anchorMin = Vector2.zero;
@@ -62,7 +62,8 @@ namespace VertigoCase.Editor
             rootRt.anchorMin = new Vector2(0f, 1f);
             rootRt.anchorMax = new Vector2(1f, 1f);
             rootRt.pivot = new Vector2(0.5f, 1f);
-            rootRt.sizeDelta = new Vector2(0f, 100f);
+            rootRt.sizeDelta = new Vector2(-16f, 140f);
+            rootRt.anchoredPosition = new Vector2(0f, -12f);
 
             var frameObj = CreateUIChild(root, "ui_image_zone_bar_frame");
             var frameImg = frameObj.AddComponent<Image>();
@@ -78,12 +79,13 @@ namespace VertigoCase.Editor
             var highlightBg = highlightObj.AddComponent<Image>();
             highlightBg.raycastTarget = false;
             highlightBg.maskable = false;
+            highlightBg.type = Image.Type.Sliced;
             highlightBg.color = Color.white;
             var highlightRt = highlightObj.GetComponent<RectTransform>();
             highlightRt.anchorMin = new Vector2(0.5f, 0f);
             highlightRt.anchorMax = new Vector2(0.5f, 1f);
             highlightRt.pivot = new Vector2(0.5f, 0.5f);
-            highlightRt.sizeDelta = new Vector2(100f, 0f);
+            highlightRt.sizeDelta = new Vector2(140f, 0f);
 
             var highlightFrameObj = CreateUIChild(highlightObj, "ui_image_zone_current_frame");
             var highlightFrame = highlightFrameObj.AddComponent<Image>();

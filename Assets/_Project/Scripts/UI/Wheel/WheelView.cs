@@ -25,7 +25,7 @@ namespace VertigoCase.UI
         [SerializeField] private Transform _animTarget;
 
         [Header("Layout")]
-        [SerializeField] [Range(50f, 400f)] private float _sliceContentRadius = 195f;
+        [SerializeField] [Range(50f, 600f)] private float _sliceContentRadius = 290f;
 
         [Header("Settings")]
         [SerializeField] private SpinAnimationSettingsSO _spinSettings;
@@ -164,6 +164,14 @@ namespace VertigoCase.UI
                 _animTarget.DOScale(1f, 0.3f).SetEase(Ease.OutBack));
 
             _transitionSequence.SetLink(gameObject);
+        }
+
+        public RectTransform GetSliceTransform(int sliceIndex)
+        {
+            if (_slices == null || sliceIndex < 0 || sliceIndex >= _sliceCount)
+                return null;
+
+            return _slices[sliceIndex].GetComponent<RectTransform>();
         }
 
         public void SetInteractable(bool interactable)

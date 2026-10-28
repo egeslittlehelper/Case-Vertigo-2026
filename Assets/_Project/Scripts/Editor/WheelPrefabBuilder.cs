@@ -33,7 +33,7 @@ namespace VertigoCase.Editor
 
             var content = CreateUIChild(root, "ui_container_slice_content");
             var contentRt = content.GetComponent<RectTransform>();
-            contentRt.sizeDelta = new Vector2(70f, 80f);
+            contentRt.sizeDelta = new Vector2(100f, 110f);
             contentRt.pivot = new Vector2(0.5f, 0.5f);
 
             var iconObj = CreateUIChild(content, "ui_image_slice_icon_value");
@@ -45,8 +45,8 @@ namespace VertigoCase.Editor
             iconRt.anchorMin = new Vector2(0.5f, 0.5f);
             iconRt.anchorMax = new Vector2(0.5f, 0.5f);
             iconRt.pivot = new Vector2(0.5f, 0.5f);
-            iconRt.sizeDelta = new Vector2(48f, 48f);
-            iconRt.anchoredPosition = new Vector2(0f, 10f);
+            iconRt.sizeDelta = new Vector2(72f, 72f);
+            iconRt.anchoredPosition = new Vector2(0f, 14f);
 
             var textObj = CreateUIChild(content, "ui_text_slice_amount_value");
             var tmp = textObj.AddComponent<TextMeshProUGUI>();
@@ -56,13 +56,13 @@ namespace VertigoCase.Editor
             tmp.alignment = TextAlignmentOptions.Center;
             tmp.enableAutoSizing = true;
             tmp.fontSizeMin = 6f;
-            tmp.fontSizeMax = 14f;
+            tmp.fontSizeMax = 20f;
             var textRt = textObj.GetComponent<RectTransform>();
             textRt.anchorMin = new Vector2(0.5f, 0.5f);
             textRt.anchorMax = new Vector2(0.5f, 0.5f);
             textRt.pivot = new Vector2(0.5f, 0.5f);
-            textRt.sizeDelta = new Vector2(60f, 20f);
-            textRt.anchoredPosition = new Vector2(0f, -15f);
+            textRt.sizeDelta = new Vector2(90f, 26f);
+            textRt.anchoredPosition = new Vector2(0f, -20f);
 
             PrefabUtility.SaveAsPrefabAsset(root, path);
             Object.DestroyImmediate(root);
@@ -96,7 +96,7 @@ namespace VertigoCase.Editor
             var animRt = animObj.GetComponent<RectTransform>();
             animRt.anchorMin = new Vector2(0.5f, 0.5f);
             animRt.anchorMax = new Vector2(0.5f, 0.5f);
-            animRt.sizeDelta = new Vector2(600f, 600f);
+            animRt.sizeDelta = new Vector2(900f, 900f);
 
             var baseObj = CreateUIChild(animObj, "ui_image_wheel_base_value");
             var baseImg = baseObj.AddComponent<Image>();
@@ -123,8 +123,8 @@ namespace VertigoCase.Editor
             indicatorRt.anchorMin = new Vector2(0.5f, 0.5f);
             indicatorRt.anchorMax = new Vector2(0.5f, 0.5f);
             indicatorRt.pivot = new Vector2(0.5f, 0.5f);
-            indicatorRt.sizeDelta = new Vector2(60f, 60f);
-            indicatorRt.anchoredPosition = new Vector2(0f, 310f);
+            indicatorRt.sizeDelta = new Vector2(80f, 80f);
+            indicatorRt.anchoredPosition = new Vector2(0f, 460f);
 
             var subtitleObj = CreateUIChild(root, "ui_text_wheel_subtitle_value");
             var subTmp = subtitleObj.AddComponent<TextMeshProUGUI>();

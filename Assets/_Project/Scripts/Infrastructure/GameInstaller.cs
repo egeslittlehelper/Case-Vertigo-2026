@@ -20,6 +20,8 @@ namespace VertigoCase.Infrastructure
         [SerializeField] private WheelView _wheelView;
         [SerializeField] private ZoneBarView _zoneBar;
         [SerializeField] private ZoneInfoView _zoneInfo;
+        [SerializeField] private CollectedRewardsView _rewardsView;
+        [SerializeField] private RewardFlyAnimator _flyAnimator;
 
         private GamePresenter _presenter;
 
@@ -40,6 +42,7 @@ namespace VertigoCase.Infrastructure
 
             _presenter = new GamePresenter(
                 session, _wheelView, _zoneBar, _zoneInfo,
+                _rewardsView, _flyAnimator,
                 zoneRules, scaling, _rewardCatalog);
             _presenter.Initialize();
         }
