@@ -81,6 +81,16 @@ TestResults/
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 
+# Build backup folders (Unity generates these — never ship)
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+*_BurstDebugInformation_DoNotShip/
+
+# JetBrains IDE
+.idea/
+
+# Performance test artifacts
+Assets/Resources/PerformanceTestRun*
+
 /Docs/
 
 Claude.md

@@ -4,14 +4,22 @@
 
 A wheel-of-fortune gambling game inspired by Critical Strike's "Card Game" mode. Players spin a reward wheel across escalating zones, choosing when to cash out or risk losing everything to a bomb.
 
-## Gameplay
+> **[Download APK](https://github.com/egeslittlehelper/Case-Vertigo-2026/releases/tag/Executable)**
 
-- Spin the wheel to collect rewards that scale with zone progression.
-- Every **5th zone** is a **Safe Zone** — risk-free silver spin, no bomb.
-- Every **30th zone** is a **Super Zone** — risk-free golden spin with special rewards.
-- All other zones contain a **bomb slice** — hitting it loses all collected rewards.
-- Players can **exit and collect** rewards during safe/super zones (while idle).
-- **Revive system** (bonus): spend in-game currency to keep rewards after a bomb hit, with escalating cost per revive.
+## How to Play
+
+1. Tap **SPIN** to spin the wheel. Each slice is either a reward or a bomb.
+2. Rewards are added to your collection. The wheel advances to the next zone.
+3. Every **5th zone** is a **Safe Zone** (silver wheel, no bomb). Every **30th zone** is a **Super Zone** (golden wheel, special rewards, no bomb).
+4. During safe/super zones you can tap **EXIT** to cash out and keep all collected rewards.
+5. Hit the bomb and you lose everything — or spend currency to **Revive** and keep going.
+6. Rewards scale with zone progression: the deeper you go, the better they get.
+
+## Screenshots
+
+| 20:9 | 16:9 | 4:3 |
+|:---:|:---:|:---:|
+| ![20:9](Docs/Screenshots/20_9.png) | ![16:9](Docs/Screenshots/16_9.png) | ![4:3](Docs/Screenshots/4_3.png) |
 
 ## Architecture
 
@@ -53,20 +61,37 @@ Core  (pure C#, no UnityEngine)
 - **Manual DI**: Small project scope — a DI framework would be over-engineering. All dependencies are visible in one `Awake()`.
 - **Escalating revive cost**: Strategy pattern (`IReviveCostPolicy`) — swap pricing logic without editing session code.
 
+## Tests
+
+128 EditMode unit tests covering core domain logic and pooling:
+
+- **GameSession** — spin, zone advancement, bomb, cash out, revive, reward collection
+- **GameStateMachine** — all legal/illegal state transitions
+- **SpinResolver** — weighted random selection, bomb-only edge cases
+- **ZoneRules** — safe/super zone detection, zone type classification
+- **RewardInventory** — add, merge, clear, stack consolidation
+- **ObjectPool** — get, release, grow, reuse, parent assignment
+
+Run via Unity Test Runner (EditMode) or command line:
+```
+Unity.exe -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testResults TestResults/editmode.xml
+```
+
 ## Folder Structure
 
 ```
 Assets/_Project/
 ├── Art/Sprites/          UI sprite assets
+│   └── Atlases/          Sprite Atlas (ui_atlas_main)
 ├── Data/                 ScriptableObject instances (wheels, zones, economy)
-├── Prefabs/UI/           Generated UI prefabs (wheel, popups, panels)
+├── Prefabs/UI/           UI prefabs (wheel, popups, panels)
 ├── Scenes/               Game scene
 ├── Scripts/
 │   ├── Core/             Domain logic (no Unity dependency)
 │   ├── Data/             SO definitions, config types
 │   ├── UI/               Views, presenter, animations, pooling
 │   ├── Infrastructure/   Composition root, persistence
-│   └── Editor/           Prefab builders, hierarchy validator, sandbox tools
+│   └── Editor/           Prefab builders, hierarchy validator, debug tools
 └── Tests/EditMode/       Unit tests (Core + pool)
 ```
 
@@ -88,9 +113,17 @@ Assets/_Project/
 1. Open in **Unity 6000.3.23f1**
 2. Switch platform to **Android** (IL2CPP, ARM64)
 3. Open `Assets/_Project/Scenes/Game.unity`
-4. **VertigoCase > Build All Prefabs** (regenerates all UI prefabs)
-5. **VertigoCase > Validate UI Hierarchy** (should report 0 errors)
-6. Play in editor or **Build And Run** for APK
+4. **VertigoCase > Validate UI Hierarchy** (should report 0 errors)
+5. Play in editor or **Build And Run** for APK
+
+> Prefab builder scripts are under `VertigoCase > Build Prefabs` — they are development tools for regenerating prefabs. You do not need to run them to open or play the project.
+
+## Known Limitations
+
+- Wallet balance persists via `PlayerPrefs` — a production game would use server-side storage.
+- No audio — the brief focuses on visual polish and game mechanics.
+- Reward icons and wheel art are placeholder sprites from the provided asset pack.
+- The revive system is a bonus feature; pricing is tunable via `EconomySettingsSO` but not balanced for a live economy.
 
 ## Third-Party
 
