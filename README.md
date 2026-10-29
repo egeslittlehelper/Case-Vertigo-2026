@@ -19,7 +19,7 @@ A wheel-of-fortune gambling game inspired by Critical Strike's "Card Game" mode.
 
 | 20:9 | 16:9 | 4:3 |
 |:---:|:---:|:---:|
-| ![20:9](Docs/Screenshots/20_9.png) | ![16:9](Docs/Screenshots/16_9.png) | ![4:3](Docs/Screenshots/4_3.png) |
+| ![20:9](Screenshots/20_9.png) | ![16:9](Screenshots/16_9.png) | ![4:3](Screenshots/4_3.png) |
 
 ## Architecture
 
