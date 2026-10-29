@@ -19,7 +19,7 @@ namespace VertigoCase.Editor
             return AssetDatabase.LoadAssetAtPath<Sprite>(ButtonSpritePath);
         }
 
-        [MenuItem("VertigoCase/Build Flow Prefabs")]
+        [MenuItem("VertigoCase/Build Prefabs/Flow - All")]
         public static void BuildAll()
         {
             EnsureFolder();
@@ -31,6 +31,18 @@ namespace VertigoCase.Editor
             AssetDatabase.Refresh();
             Debug.Log("[FlowPrefabBuilder] All flow prefabs created in " + PrefabFolder);
         }
+
+        [MenuItem("VertigoCase/Build Prefabs/Flow - Exit Button")]
+        public static void BuildExit() { EnsureFolder(); BuildExitButtonPrefab(); AssetDatabase.SaveAssets(); }
+
+        [MenuItem("VertigoCase/Build Prefabs/Flow - Bomb Popup")]
+        public static void BuildBomb() { EnsureFolder(); BuildBombPopupPrefab(); AssetDatabase.SaveAssets(); }
+
+        [MenuItem("VertigoCase/Build Prefabs/Flow - Confirm Loss")]
+        public static void BuildConfirm() { EnsureFolder(); BuildConfirmLossPrefab(); AssetDatabase.SaveAssets(); }
+
+        [MenuItem("VertigoCase/Build Prefabs/Flow - Cash Out Popup")]
+        public static void BuildCashOut() { EnsureFolder(); BuildCashOutPopupPrefab(); AssetDatabase.SaveAssets(); }
 
         private static void BuildExitButtonPrefab()
         {
@@ -397,10 +409,9 @@ namespace VertigoCase.Editor
         private static void BuildCashOutPopupPrefab()
         {
             string path = PrefabFolder + "/ui_popup_cashout.prefab";
-            string entryPrefabPath = PrefabFolder + "/ui_reward_entry.prefab";
 
             var root = CreateUI("ui_popup_cashout");
-            var cashOutView = root.AddComponent<CashOutPopupView>();
+            root.AddComponent<CashOutPopupView>();
             var cg = root.AddComponent<CanvasGroup>();
             cg.alpha = 0f;
             cg.blocksRaycasts = false;
@@ -451,47 +462,6 @@ namespace VertigoCase.Editor
             titleRt.anchorMin = new Vector2(0f, 0.85f);
             titleRt.anchorMax = new Vector2(1f, 0.98f);
             titleRt.sizeDelta = Vector2.zero;
-
-            // Scroll area for rewards list
-            var scrollObj = CreateUIChild(animObj, "ui_scroll_popup_cashout_rewards");
-            var scrollRt = scrollObj.GetComponent<RectTransform>();
-            scrollRt.anchorMin = new Vector2(0.05f, 0.15f);
-            scrollRt.anchorMax = new Vector2(0.95f, 0.82f);
-            scrollRt.sizeDelta = Vector2.zero;
-
-            var viewport = CreateUIChild(scrollObj, "ui_viewport_popup_cashout_rewards");
-            viewport.AddComponent<RectMask2D>();
-            var viewportRt = viewport.GetComponent<RectTransform>();
-            viewportRt.anchorMin = Vector2.zero;
-            viewportRt.anchorMax = Vector2.one;
-            viewportRt.sizeDelta = Vector2.zero;
-
-            var listObj = CreateUIChild(viewport, "ui_container_popup_cashout_rewards");
-            var listRt = listObj.GetComponent<RectTransform>();
-            listRt.anchorMin = new Vector2(0f, 1f);
-            listRt.anchorMax = new Vector2(1f, 1f);
-            listRt.pivot = new Vector2(0.5f, 1f);
-            listRt.sizeDelta = Vector2.zero;
-
-            var layout = listObj.AddComponent<VerticalLayoutGroup>();
-            layout.childAlignment = TextAnchor.UpperCenter;
-            layout.padding = new RectOffset(4, 4, 4, 4);
-            layout.spacing = 8f;
-            layout.childControlWidth = true;
-            layout.childControlHeight = false;
-            layout.childForceExpandWidth = true;
-            layout.childForceExpandHeight = false;
-
-            var fitter = listObj.AddComponent<ContentSizeFitter>();
-            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-
-            var scrollRect = scrollObj.AddComponent<ScrollRect>();
-            scrollRect.content = listRt;
-            scrollRect.viewport = viewportRt;
-            scrollRect.horizontal = false;
-            scrollRect.vertical = true;
-            scrollRect.movementType = ScrollRect.MovementType.Elastic;
-            scrollRect.scrollSensitivity = 20f;
 
             // Collect button — right side
             var continueObj = CreateUIChild(animObj, "ui_button_popup_cashout_continue");
@@ -554,17 +524,6 @@ namespace VertigoCase.Editor
             backLabelRt.anchorMin = Vector2.zero;
             backLabelRt.anchorMax = Vector2.one;
             backLabelRt.sizeDelta = Vector2.zero;
-
-            // Wire entry prefab
-            var entryPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(entryPrefabPath);
-            if (entryPrefab != null)
-            {
-                var so = new SerializedObject(cashOutView);
-                so.FindProperty("_entryPrefab").objectReferenceValue =
-                    entryPrefab.GetComponent<RewardEntryView>();
-                so.FindProperty("_rewardListContainer").objectReferenceValue = listRt;
-                so.ApplyModifiedPropertiesWithoutUndo();
-            }
 
             root.SetActive(false);
             PrefabUtility.SaveAsPrefabAsset(root, path);

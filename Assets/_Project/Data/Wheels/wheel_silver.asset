@@ -36,7 +36,7 @@ MonoBehaviour:
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
     _baseAmount: 1
-    _weight: 10
+    _weight: 5
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 3f7b0d0cdabb72c4d89db26ee14904d8, type: 2}
     _baseAmount: 1

@@ -256,7 +256,7 @@ namespace VertigoCase.UI
             {
                 _wheelView.SetInteractable(false);
                 _wheelView.StopIdlePulse();
-                _cashOutPopup.Show(_session.CollectedRewards, _catalog);
+                _cashOutPopup.Show();
             }
             else
             {

@@ -24,8 +24,8 @@ namespace VertigoCase.UI
 
         public void EnableMaskable()
         {
-            if (_icon != null) _icon.maskable = true;
-            if (_amountText != null) _amountText.maskable = true;
+            foreach (var g in GetComponentsInChildren<MaskableGraphic>(true))
+                g.maskable = true;
         }
 
         public void Set(Sprite icon, int amount)

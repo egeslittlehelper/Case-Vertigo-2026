@@ -13,7 +13,7 @@ namespace VertigoCase.Editor
     {
         private const string PrefabFolder = "Assets/_Project/Prefabs/UI";
 
-        [MenuItem("VertigoCase/Build Economy Prefabs")]
+        [MenuItem("VertigoCase/Build Prefabs/Economy - All")]
         public static void BuildAll()
         {
             EnsureFolder();
@@ -22,6 +22,9 @@ namespace VertigoCase.Editor
             AssetDatabase.Refresh();
             Debug.Log("[EconomyPrefabBuilder] All economy prefabs created in " + PrefabFolder);
         }
+
+        [MenuItem("VertigoCase/Build Prefabs/Economy - Wallet")]
+        public static void BuildWallet() { EnsureFolder(); BuildWalletPrefab(); AssetDatabase.SaveAssets(); }
 
         private static void BuildWalletPrefab()
         {

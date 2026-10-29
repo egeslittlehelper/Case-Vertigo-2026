@@ -26,6 +26,7 @@ namespace VertigoCase.UI
             {
                 entry = _pool.Get();
                 entry.transform.SetParent(_listContainer, false);
+                entry.EnableMaskable();
                 entry.Set(icon, 0);
                 _entries[rewardId] = entry;
             }

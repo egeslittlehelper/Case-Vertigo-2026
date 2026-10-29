@@ -13,7 +13,7 @@ namespace VertigoCase.Editor
     {
         private const string PrefabFolder = "Assets/_Project/Prefabs/UI";
 
-        [MenuItem("VertigoCase/Build Zone Prefabs")]
+        [MenuItem("VertigoCase/Build Prefabs/Zone - All")]
         public static void BuildAll()
         {
             EnsureFolder();
@@ -24,6 +24,15 @@ namespace VertigoCase.Editor
             AssetDatabase.Refresh();
             Debug.Log("[ZonePrefabBuilder] All zone prefabs created in " + PrefabFolder);
         }
+
+        [MenuItem("VertigoCase/Build Prefabs/Zone - Cell")]
+        public static void BuildCell() { EnsureFolder(); BuildCellPrefab(); AssetDatabase.SaveAssets(); }
+
+        [MenuItem("VertigoCase/Build Prefabs/Zone - Bar")]
+        public static void BuildBar() { EnsureFolder(); BuildBarPrefab(); AssetDatabase.SaveAssets(); }
+
+        [MenuItem("VertigoCase/Build Prefabs/Zone - Info")]
+        public static void BuildInfo() { EnsureFolder(); BuildInfoPrefab(); AssetDatabase.SaveAssets(); }
 
         private static void BuildCellPrefab()
         {

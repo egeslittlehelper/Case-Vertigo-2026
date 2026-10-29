@@ -13,7 +13,7 @@ namespace VertigoCase.Editor
     {
         private const string PrefabFolder = "Assets/_Project/Prefabs/UI";
 
-        [MenuItem("VertigoCase/Build Rewards Prefabs")]
+        [MenuItem("VertigoCase/Build Prefabs/Rewards - All")]
         public static void BuildAll()
         {
             EnsureFolder();
@@ -24,6 +24,15 @@ namespace VertigoCase.Editor
             AssetDatabase.Refresh();
             Debug.Log("[RewardsPrefabBuilder] All reward prefabs created in " + PrefabFolder);
         }
+
+        [MenuItem("VertigoCase/Build Prefabs/Rewards - Fly Icon")]
+        public static void BuildFlyIcon() { EnsureFolder(); BuildFlyIconPrefab(); AssetDatabase.SaveAssets(); }
+
+        [MenuItem("VertigoCase/Build Prefabs/Rewards - Entry")]
+        public static void BuildEntry() { EnsureFolder(); BuildEntryPrefab(); AssetDatabase.SaveAssets(); }
+
+        [MenuItem("VertigoCase/Build Prefabs/Rewards - Panel")]
+        public static void BuildPanel() { EnsureFolder(); BuildPanelPrefab(); AssetDatabase.SaveAssets(); }
 
         private static void BuildFlyIconPrefab()
         {
@@ -70,7 +79,7 @@ namespace VertigoCase.Editor
             var iconObj = CreateUIChild(animObj, "ui_image_reward_icon_value");
             var iconImg = iconObj.AddComponent<Image>();
             iconImg.raycastTarget = false;
-            iconImg.maskable = false;
+            iconImg.maskable = true;
             iconImg.preserveAspect = true;
             var iconRt = iconObj.GetComponent<RectTransform>();
             iconRt.anchorMin = new Vector2(0.05f, 0.05f);
@@ -82,7 +91,7 @@ namespace VertigoCase.Editor
             var textObj = CreateUIChild(animObj, "ui_text_reward_amount_value");
             var tmp = textObj.AddComponent<TextMeshProUGUI>();
             tmp.raycastTarget = false;
-            tmp.maskable = false;
+            tmp.maskable = true;
             tmp.text = "0";
             tmp.alignment = TextAlignmentOptions.Left;
             tmp.verticalAlignment = VerticalAlignmentOptions.Middle;
@@ -129,22 +138,24 @@ namespace VertigoCase.Editor
             frameRt.anchorMax = Vector2.one;
             frameRt.sizeDelta = Vector2.zero;
 
-            // Scroll area — clips and scrolls the reward list
+            // Scroll area
             var scrollObj = CreateUIChild(root, "ui_container_rewards_scroll");
-            scrollObj.AddComponent<RectMask2D>();
-            var scrollRect = scrollObj.AddComponent<ScrollRect>();
-            scrollRect.horizontal = false;
-            scrollRect.vertical = true;
-            scrollRect.movementType = ScrollRect.MovementType.Clamped;
-            scrollRect.scrollSensitivity = 20f;
             var scrollRt = scrollObj.GetComponent<RectTransform>();
             scrollRt.anchorMin = Vector2.zero;
             scrollRt.anchorMax = Vector2.one;
             scrollRt.offsetMin = new Vector2(6f, 6f);
-            scrollRt.offsetMax = new Vector2(-6f, -6f);
+            scrollRt.offsetMax = new Vector2(-16f, -6f);
+
+            // Viewport — separate child with RectMask2D for clipping
+            var viewportObj = CreateUIChild(scrollObj, "ui_viewport_rewards");
+            viewportObj.AddComponent<RectMask2D>();
+            var viewportRt = viewportObj.GetComponent<RectTransform>();
+            viewportRt.anchorMin = Vector2.zero;
+            viewportRt.anchorMax = Vector2.one;
+            viewportRt.sizeDelta = Vector2.zero;
 
             // Vertical list — grows with content, scrolls when it overflows
-            var listObj = CreateUIChild(scrollObj, "ui_container_rewards_list");
+            var listObj = CreateUIChild(viewportObj, "ui_container_rewards_list");
             var listRt = listObj.GetComponent<RectTransform>();
             listRt.anchorMin = new Vector2(0f, 1f);
             listRt.anchorMax = new Vector2(1f, 1f);
@@ -164,7 +175,51 @@ namespace VertigoCase.Editor
             var listFitter = listObj.AddComponent<ContentSizeFitter>();
             listFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
+            var scrollRect = scrollObj.AddComponent<ScrollRect>();
             scrollRect.content = listRt;
+            scrollRect.viewport = viewportRt;
+            scrollRect.horizontal = false;
+            scrollRect.vertical = true;
+            scrollRect.movementType = ScrollRect.MovementType.Clamped;
+            scrollRect.scrollSensitivity = 20f;
+
+            // Vertical scrollbar — thin bar on right edge of panel
+            var scrollbarObj = CreateUIChild(root, "ui_scrollbar_rewards");
+            var scrollbarImg = scrollbarObj.AddComponent<Image>();
+            scrollbarImg.raycastTarget = true;
+            scrollbarImg.maskable = false;
+            scrollbarImg.color = new Color(0.15f, 0.15f, 0.15f, 0.5f);
+            var scrollbar = scrollbarObj.AddComponent<Scrollbar>();
+            scrollbar.direction = Scrollbar.Direction.BottomToTop;
+            var scrollbarRt = scrollbarObj.GetComponent<RectTransform>();
+            scrollbarRt.anchorMin = new Vector2(1f, 0f);
+            scrollbarRt.anchorMax = new Vector2(1f, 1f);
+            scrollbarRt.pivot = new Vector2(1f, 0.5f);
+            scrollbarRt.sizeDelta = new Vector2(10f, 0f);
+            scrollbarRt.offsetMin = new Vector2(-10f, 6f);
+            scrollbarRt.offsetMax = new Vector2(0f, -6f);
+
+            var slidingArea = CreateUIChild(scrollbarObj, "ui_scrollbar_rewards_sliding");
+            var slidingRt = slidingArea.GetComponent<RectTransform>();
+            slidingRt.anchorMin = Vector2.zero;
+            slidingRt.anchorMax = Vector2.one;
+            slidingRt.sizeDelta = Vector2.zero;
+
+            var handleObj = CreateUIChild(slidingArea, "ui_scrollbar_rewards_handle");
+            var handleImg = handleObj.AddComponent<Image>();
+            handleImg.raycastTarget = true;
+            handleImg.maskable = false;
+            handleImg.color = new Color(0.6f, 0.6f, 0.6f, 0.8f);
+            var handleRt = handleObj.GetComponent<RectTransform>();
+            handleRt.anchorMin = Vector2.zero;
+            handleRt.anchorMax = new Vector2(1f, 0.2f);
+            handleRt.sizeDelta = Vector2.zero;
+
+            scrollbar.handleRect = handleRt;
+            scrollbar.targetGraphic = handleImg;
+
+            scrollRect.verticalScrollbar = scrollbar;
+            scrollRect.verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.Permanent;
 
             var entryPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(entryPrefabPath);
             if (entryPrefab != null)

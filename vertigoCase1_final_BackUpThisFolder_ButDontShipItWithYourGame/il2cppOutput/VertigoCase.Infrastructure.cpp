@@ -1,0 +1,1245 @@
+﻿#include "pch-cpp.hpp"
+
+
+
+
+
+template <typename R, typename T1, typename T2>
+struct InterfaceFuncInvoker2
+{
+	typedef R (*Func)(void*, T1, T2, const RuntimeMethod*);
+
+	static inline R Invoke (Il2CppMethodSlot slot, RuntimeClass* declaringInterface, RuntimeObject* obj, T1 p1, T2 p2)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_interface_invoke_data(slot, obj, declaringInterface);
+		return ((Func)invokeData.methodPtr)(obj, p1, p2, invokeData.method);
+	}
+};
+
+struct Action_1_tFC8E522A53E179E27A9BF18A5DF779913CB176BE;
+struct Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404;
+struct Action_1_t6D35C2FCC6E5F381DE678F3A33DA677F99E0DE6B;
+struct Action_1_tBFE415BB98035E20960E2686B633B8327236090C;
+struct Action_2_t29A7A8EFACA3E5C6AE4BC034D1B559E9F830081A;
+struct Dictionary_2_tB7719DFE76C1E015F633546161024ACA807E581C;
+struct Dictionary_2_t1E80FBDDD1D27F73A33B57C7D0FF0932D037322A;
+struct List_1_tD2E9FC0E3E405B0B0AAC0CC5F536056A15167875;
+struct List_1_tAC0B8611C15B171DC9333B87FC7AAF23132EAE92;
+struct List_1_tE248BD5C928C525E0CD79AC08B5755929FF21415;
+struct ObjectPool_1_t07BEAD179EBD3E890808A0A7A291801C2678D8BC;
+struct ObjectPool_1_tEAB666939AB310934586A6D3E1790DD9761C4C13;
+struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
+struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
+struct WheelSliceViewU5BU5D_tB33865E961A91D55F6B3347BD05B2C1113B114F3;
+struct ZoneCellViewU5BU5D_t47CE880D6FDABC29A101A577E041E0136CADD981;
+struct Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07;
+struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354;
+struct BombPopupView_t5F7F08897B2668432B9993E759B02B149F872EEE;
+struct Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098;
+struct CancellationTokenSource_tAAE1E0033BCFC233801F8CB4CED5C852B350CB7B;
+struct Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26;
+struct CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094;
+struct CashOutPopupView_tD70467681A21053233C817F491264CA148EAE867;
+struct CollectedRewardsView_t1BFE7A31D8180A4D976B95B13D063BFD6F259E3D;
+struct ConfirmLossPopupView_t95DA52547744A7D55544822FB5741489D803D60D;
+struct CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC;
+struct Delegate_t;
+struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
+struct EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B;
+struct ExitButtonView_tB429479FDBBD2DE97B41BAE0F960A4F0C8C11A20;
+struct FlyIconView_t3E95922143DDCA2CEB4537D8CADAB42AD14D96A2;
+struct GameInstaller_t04C2A17D17ADC3E11823041D316E9E000F64A7C6;
+struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
+struct GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595;
+struct GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61;
+struct GameStateMachine_t5749C6824E6EE5D443C19B4435769158B58F21FB;
+struct IDOTweenInit_t72D9BFD78C21132CBCD4EEF9B6C99CD17EBE635C;
+struct IRandomProvider_tA9869873CAC588F42E707E2021D5BEE11A19A05C;
+struct IReviveCostPolicy_t628D885693E08BF75E86CBD60D2E1B7534357271;
+struct IRewardDefinition_t3947FBFA6B69B81ABDF6961A970C92757CF6A8E0;
+struct IRewardScaling_t2B254693684277911E3163C1186C0FD0C457C35E;
+struct IWallet_tF2FCCBB9C3970E8D06E4AEE4BB1390A839584A77;
+struct IWheelDefinition_t044B636B60151A90145295F17AAD93698F6B2EAF;
+struct IWheelProvider_tCB017DED609D15FD35A164C6B9CEE4992F66D14A;
+struct IZoneRules_tC53546642B2C554A9879D0D3AA0C96AFE75A6445;
+struct Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E;
+struct MethodInfo_t;
+struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
+struct PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279;
+struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5;
+struct RewardCatalogSO_t6E8876EFDB29D6A05CFC20F806BEC22B397A1031;
+struct RewardEntryView_tE0AB938A3E8F7F49EC6E774D46F2C55D16510EDB;
+struct RewardFlyAnimator_tB9B4C9ADA13181686A8D465440664777F974F30D;
+struct RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292;
+struct RewardItemSO_t67D3B4DF3716B0E7B59208AE059AC7B39880AB01;
+struct Sequence_tEADBE56D6ED2E9EE8FB2E5459C3E57131EC0545C;
+struct SliceViewFactory_t33B9C596DD9AA47558F0EF6C642EF70C7E5A59AE;
+struct SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0;
+struct SpinAnimationSettingsSO_t24437A665BA026F17A0AEBBB326AD10F1BCD0190;
+struct SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51;
+struct Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99;
+struct String_t;
+struct TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9;
+struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1;
+struct Tween_t8CB06EBC48A5B6F5065C490E4F4909C18CE7983C;
+struct TweenCallback_t7C8B8A38E7B30905FF1B83C943256EF23617BB24;
+struct UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B;
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
+struct WalletView_tAF1D2FCE3E20291B157641394D13826B8CA71969;
+struct WheelConfigSO_tF96151BFF68DCEF58E0BDB1C806B1A080A80FB9A;
+struct WheelView_tF2A4A7CB639EE606FE8CB344835451C1D1564F63;
+struct ZoneBarView_tC7A8EE253E641854988609C03F55163FE9046FF9;
+struct ZoneCellView_t3778777D6532A5A73265625018C458B5B51C4772;
+struct ZoneInfoView_t61281501F7FD1B49284C095D77BFB4F80032C26E;
+struct ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199;
+struct ZoneRules_t17AC127762ACE9035CF76660D6BF6D8C0E9D7BE6;
+struct ZoneTypeColorsSO_t9B4C2E4F8DA0BAC9291973882CD5B3D53B4A6164;
+
+IL2CPP_EXTERN_C RuntimeClass* Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* DOTween_t96369E1D40ABE93A56308F57DEA6B04219C66D13_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* IDOTweenInit_t72D9BFD78C21132CBCD4EEF9B6C99CD17EBE635C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C String_t* _stringLiteralE9AC01D2676390AF3FEBAD5E63F720B49628893D;
+IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1__ctor_m4445E1AA3F05926766AD0827B4F2F0922A81A120_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var;
+struct Delegate_t_marshaled_com;
+struct Delegate_t_marshaled_pinvoke;
+
+
+IL2CPP_EXTERN_C_BEGIN
+IL2CPP_EXTERN_C_END
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+struct U3CModuleU3E_tAA89B7F57A50C72BA355BB0B117663A3658F1FBC 
+{
+};
+struct CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC  : public RuntimeObject
+{
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ____curve;
+};
+struct InfrastructureAssemblyMarker_tA1CA81CC300AA46020006F61773BFC6DE1B062C1  : public RuntimeObject
+{
+};
+struct PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279  : public RuntimeObject
+{
+	int32_t ___U3CBalanceU3Ek__BackingField;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___BalanceChanged;
+};
+struct RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292  : public RuntimeObject
+{
+	List_1_tAC0B8611C15B171DC9333B87FC7AAF23132EAE92* ____items;
+	Action_1_t6D35C2FCC6E5F381DE678F3A33DA677F99E0DE6B* ___ItemChanged;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___Cleared;
+};
+struct SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0  : public RuntimeObject
+{
+	ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* ____progression;
+};
+struct SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51  : public RuntimeObject
+{
+	RuntimeObject* ____random;
+	RuntimeObject* ____scaling;
+};
+struct String_t  : public RuntimeObject
+{
+	int32_t ____stringLength;
+	Il2CppChar ____firstChar;
+};
+struct UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B  : public RuntimeObject
+{
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
+{
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
+{
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
+{
+};
+struct ZoneRules_t17AC127762ACE9035CF76660D6BF6D8C0E9D7BE6  : public RuntimeObject
+{
+	int32_t ____safeInterval;
+	int32_t ____superInterval;
+};
+struct Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 
+{
+	bool ___hasValue;
+	bool ___value;
+};
+struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22 
+{
+	bool ___m_value;
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
+{
+};
+struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
+{
+	int32_t ___m_value;
+};
+struct IntPtr_t 
+{
+	void* ___m_value;
+};
+struct SpinResult_tAF4338E9CA9CEE5DAD69F7ADF92C59CEFB272F5B 
+{
+	int32_t ___U3CSliceIndexU3Ek__BackingField;
+	bool ___U3CIsBombU3Ek__BackingField;
+	RuntimeObject* ___U3CRewardU3Ek__BackingField;
+	int32_t ___U3CAmountU3Ek__BackingField;
+};
+struct SpinResult_tAF4338E9CA9CEE5DAD69F7ADF92C59CEFB272F5B_marshaled_pinvoke
+{
+	int32_t ___U3CSliceIndexU3Ek__BackingField;
+	int32_t ___U3CIsBombU3Ek__BackingField;
+	RuntimeObject* ___U3CRewardU3Ek__BackingField;
+	int32_t ___U3CAmountU3Ek__BackingField;
+};
+struct SpinResult_tAF4338E9CA9CEE5DAD69F7ADF92C59CEFB272F5B_marshaled_com
+{
+	int32_t ___U3CSliceIndexU3Ek__BackingField;
+	int32_t ___U3CIsBombU3Ek__BackingField;
+	RuntimeObject* ___U3CRewardU3Ek__BackingField;
+	int32_t ___U3CAmountU3Ek__BackingField;
+};
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
+	};
+};
+struct Nullable_1_t8C57FA46DB660568A0995975217BB8FCCCF34650 
+{
+	bool ___hasValue;
+	SpinResult_tAF4338E9CA9CEE5DAD69F7ADF92C59CEFB272F5B ___value;
+};
+struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354  : public RuntimeObject
+{
+	intptr_t ___m_Ptr;
+	bool ___m_RequiresNativeCleanup;
+};
+struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_pinvoke
+{
+	intptr_t ___m_Ptr;
+	int32_t ___m_RequiresNativeCleanup;
+};
+struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com
+{
+	intptr_t ___m_Ptr;
+	int32_t ___m_RequiresNativeCleanup;
+};
+struct Delegate_t  : public RuntimeObject
+{
+	intptr_t ___method_ptr;
+	intptr_t ___invoke_impl;
+	RuntimeObject* ___m_target;
+	intptr_t ___method;
+	intptr_t ___delegate_trampoline;
+	intptr_t ___extra_arg;
+	intptr_t ___method_code;
+	intptr_t ___interp_method;
+	intptr_t ___interp_invoke_impl;
+	MethodInfo_t* ___method_info;
+	MethodInfo_t* ___original_method_info;
+	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
+	bool ___method_is_virtual;
+};
+struct Delegate_t_marshaled_pinvoke
+{
+	intptr_t ___method_ptr;
+	intptr_t ___invoke_impl;
+	Il2CppIUnknown* ___m_target;
+	intptr_t ___method;
+	intptr_t ___delegate_trampoline;
+	intptr_t ___extra_arg;
+	intptr_t ___method_code;
+	intptr_t ___interp_method;
+	intptr_t ___interp_invoke_impl;
+	MethodInfo_t* ___method_info;
+	MethodInfo_t* ___original_method_info;
+	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
+	int32_t ___method_is_virtual;
+};
+struct Delegate_t_marshaled_com
+{
+	intptr_t ___method_ptr;
+	intptr_t ___invoke_impl;
+	Il2CppIUnknown* ___m_target;
+	intptr_t ___method;
+	intptr_t ___delegate_trampoline;
+	intptr_t ___extra_arg;
+	intptr_t ___method_code;
+	intptr_t ___interp_method;
+	intptr_t ___interp_invoke_impl;
+	MethodInfo_t* ___method_info;
+	MethodInfo_t* ___original_method_info;
+	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
+	int32_t ___method_is_virtual;
+};
+struct Int32Enum_tCBAC8BA2BFF3A845FA599F303093BBBA374B6F0C 
+{
+	int32_t ___value__;
+};
+struct LogBehaviour_t2FD320D27583DB4381604A338ACB97E18D9AEB2D 
+{
+	int32_t ___value__;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C  : public RuntimeObject
+{
+	intptr_t ___m_CachedPtr;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
+{
+	intptr_t ___m_CachedPtr;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
+{
+	intptr_t ___m_CachedPtr;
+};
+struct ZoneType_t34F96038859C5A2895E0A5813BF4A49DDABAC4A2 
+{
+	int32_t ___value__;
+};
+struct Nullable_1_t163D49A1147F217B7BD43BE8ACC8A5CC6B846D14 
+{
+	bool ___hasValue;
+	int32_t ___value;
+};
+struct Nullable_1_t93085375A199522C60696471B1FB8B4B7FCB89FD 
+{
+	bool ___hasValue;
+	int32_t ___value;
+};
+struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
+struct GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595  : public RuntimeObject
+{
+	GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61* ____session;
+	WheelView_tF2A4A7CB639EE606FE8CB344835451C1D1564F63* ____wheelView;
+	ZoneBarView_tC7A8EE253E641854988609C03F55163FE9046FF9* ____zoneBar;
+	ZoneInfoView_t61281501F7FD1B49284C095D77BFB4F80032C26E* ____zoneInfo;
+	CollectedRewardsView_t1BFE7A31D8180A4D976B95B13D063BFD6F259E3D* ____rewardsView;
+	RewardFlyAnimator_tB9B4C9ADA13181686A8D465440664777F974F30D* ____flyAnimator;
+	ExitButtonView_tB429479FDBBD2DE97B41BAE0F960A4F0C8C11A20* ____exitButton;
+	BombPopupView_t5F7F08897B2668432B9993E759B02B149F872EEE* ____bombPopup;
+	ConfirmLossPopupView_t95DA52547744A7D55544822FB5741489D803D60D* ____confirmLossPopup;
+	CashOutPopupView_tD70467681A21053233C817F491264CA148EAE867* ____cashOutPopup;
+	RuntimeObject* ____zoneRules;
+	RuntimeObject* ____scaling;
+	RewardCatalogSO_t6E8876EFDB29D6A05CFC20F806BEC22B397A1031* ____catalog;
+	RuntimeObject* ____wallet;
+	WalletView_tAF1D2FCE3E20291B157641394D13826B8CA71969* ____walletView;
+	String_t* ____currencyId;
+	int32_t ____previousZoneType;
+};
+struct GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61  : public RuntimeObject
+{
+	RuntimeObject* ____zoneRules;
+	RuntimeObject* ____wheelProvider;
+	SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51* ____spinResolver;
+	RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292* ____inventory;
+	GameStateMachine_t5749C6824E6EE5D443C19B4435769158B58F21FB* ____stateMachine;
+	RuntimeObject* ____wallet;
+	RuntimeObject* ____reviveCostPolicy;
+	String_t* ____currencyId;
+	Nullable_1_t8C57FA46DB660568A0995975217BB8FCCCF34650 ____pendingResult;
+	int32_t ____reviveCount;
+	int32_t ___U3CCurrentZoneU3Ek__BackingField;
+	RuntimeObject* ___U3CCurrentWheelU3Ek__BackingField;
+	Action_2_t29A7A8EFACA3E5C6AE4BC034D1B559E9F830081A* ___ZoneChanged;
+	Action_1_tBFE415BB98035E20960E2686B633B8327236090C* ___SpinStarted;
+	Action_1_tBFE415BB98035E20960E2686B633B8327236090C* ___RewardCollected;
+	Action_1_tBFE415BB98035E20960E2686B633B8327236090C* ___BombHit;
+	Action_1_tFC8E522A53E179E27A9BF18A5DF779913CB176BE* ___CashedOut;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___Revived;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___RunReset;
+};
+struct MulticastDelegate_t  : public Delegate_t
+{
+	DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* ___delegates;
+};
+struct MulticastDelegate_t_marshaled_pinvoke : public Delegate_t_marshaled_pinvoke
+{
+	Delegate_t_marshaled_pinvoke** ___delegates;
+};
+struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
+{
+	Delegate_t_marshaled_com** ___delegates;
+};
+struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
+struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A_marshaled_pinvoke : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
+{
+};
+struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A_marshaled_com : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
+{
+};
+struct Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404  : public MulticastDelegate_t
+{
+};
+struct Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
+{
+};
+struct EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B  : public ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A
+{
+	RewardItemSO_t67D3B4DF3716B0E7B59208AE059AC7B39880AB01* ____currencyReward;
+	int32_t ____startingBalance;
+	int32_t ____reviveBaseCost;
+	float ____reviveCostMultiplier;
+};
+struct RewardCatalogSO_t6E8876EFDB29D6A05CFC20F806BEC22B397A1031  : public ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A
+{
+	List_1_tD2E9FC0E3E405B0B0AAC0CC5F536056A15167875* ____rewards;
+	Dictionary_2_t1E80FBDDD1D27F73A33B57C7D0FF0932D037322A* ____lookup;
+};
+struct ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199  : public ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A
+{
+	int32_t ____safeInterval;
+	int32_t ____superInterval;
+	AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ____rewardMultiplier;
+	List_1_tE248BD5C928C525E0CD79AC08B5755929FF21415* ____normalTiers;
+	WheelConfigSO_tF96151BFF68DCEF58E0BDB1C806B1A080A80FB9A* ____safeWheel;
+	WheelConfigSO_tF96151BFF68DCEF58E0BDB1C806B1A080A80FB9A* ____superWheel;
+};
+struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
+{
+	CancellationTokenSource_tAAE1E0033BCFC233801F8CB4CED5C852B350CB7B* ___m_CancellationTokenSource;
+};
+struct ExitButtonView_tB429479FDBBD2DE97B41BAE0F960A4F0C8C11A20  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____button;
+	CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* ____canvasGroup;
+	float ____fadeDuration;
+	float ____disabledAlpha;
+	Tween_t8CB06EBC48A5B6F5065C490E4F4909C18CE7983C* ____fadeTween;
+	bool ____interactable;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___Clicked;
+};
+struct GameInstaller_t04C2A17D17ADC3E11823041D316E9E000F64A7C6  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* ____zoneProgression;
+	RewardCatalogSO_t6E8876EFDB29D6A05CFC20F806BEC22B397A1031* ____rewardCatalog;
+	SpinAnimationSettingsSO_t24437A665BA026F17A0AEBBB326AD10F1BCD0190* ____spinSettings;
+	EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* ____economySettings;
+	WheelView_tF2A4A7CB639EE606FE8CB344835451C1D1564F63* ____wheelView;
+	ZoneBarView_tC7A8EE253E641854988609C03F55163FE9046FF9* ____zoneBar;
+	ZoneInfoView_t61281501F7FD1B49284C095D77BFB4F80032C26E* ____zoneInfo;
+	CollectedRewardsView_t1BFE7A31D8180A4D976B95B13D063BFD6F259E3D* ____rewardsView;
+	RewardFlyAnimator_tB9B4C9ADA13181686A8D465440664777F974F30D* ____flyAnimator;
+	WalletView_tAF1D2FCE3E20291B157641394D13826B8CA71969* ____walletView;
+	ExitButtonView_tB429479FDBBD2DE97B41BAE0F960A4F0C8C11A20* ____exitButton;
+	BombPopupView_t5F7F08897B2668432B9993E759B02B149F872EEE* ____bombPopup;
+	ConfirmLossPopupView_t95DA52547744A7D55544822FB5741489D803D60D* ____confirmLossPopup;
+	CashOutPopupView_tD70467681A21053233C817F491264CA148EAE867* ____cashOutPopup;
+	GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* ____presenter;
+};
+struct PopupViewBase_tFBC0E4A1300BA467E4C0D25F57F2F869156EE8E8  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* ____canvasGroup;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____animTarget;
+	float ____fadeDuration;
+	float ____scaleDuration;
+	Sequence_tEADBE56D6ED2E9EE8FB2E5459C3E57131EC0545C* ____showSequence;
+	Sequence_tEADBE56D6ED2E9EE8FB2E5459C3E57131EC0545C* ____hideSequence;
+	bool ___U3CIsOpenU3Ek__BackingField;
+};
+struct RewardFlyAnimator_tB9B4C9ADA13181686A8D465440664777F974F30D  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	FlyIconView_t3E95922143DDCA2CEB4537D8CADAB42AD14D96A2* ____flyPrefab;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____flyContainer;
+	Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* ____rootCanvas;
+	int32_t ____iconCount;
+	float ____flyDuration;
+	float ____staggerDelay;
+	float ____spread;
+	ObjectPool_1_t07BEAD179EBD3E890808A0A7A291801C2678D8BC* ____pool;
+	Sequence_tEADBE56D6ED2E9EE8FB2E5459C3E57131EC0545C* ____flySequence;
+};
+struct UIViewBase_t2B1A9ACDD4D3D27E747078D9FF7080446ECD63E7  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____root;
+};
+struct WalletView_tAF1D2FCE3E20291B157641394D13826B8CA71969  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____icon;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____balanceText;
+	Tween_t8CB06EBC48A5B6F5065C490E4F4909C18CE7983C* ____countTween;
+	int32_t ____displayedBalance;
+};
+struct BombPopupView_t5F7F08897B2668432B9993E759B02B149F872EEE  : public PopupViewBase_tFBC0E4A1300BA467E4C0D25F57F2F869156EE8E8
+{
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____titleText;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____lostText;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____giveUpButton;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____reviveButton;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____reviveCostText;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____reviveCostIcon;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___GiveUpClicked;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___ReviveClicked;
+};
+struct CashOutPopupView_tD70467681A21053233C817F491264CA148EAE867  : public PopupViewBase_tFBC0E4A1300BA467E4C0D25F57F2F869156EE8E8
+{
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____titleText;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____continueButton;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____goBackButton;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___ContinueClicked;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___GoBackClicked;
+};
+struct CollectedRewardsView_t1BFE7A31D8180A4D976B95B13D063BFD6F259E3D  : public UIViewBase_t2B1A9ACDD4D3D27E747078D9FF7080446ECD63E7
+{
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____listContainer;
+	RewardEntryView_tE0AB938A3E8F7F49EC6E774D46F2C55D16510EDB* ____entryPrefab;
+	int32_t ____prewarm;
+	ObjectPool_1_tEAB666939AB310934586A6D3E1790DD9761C4C13* ____pool;
+	Dictionary_2_tB7719DFE76C1E015F633546161024ACA807E581C* ____entries;
+};
+struct ConfirmLossPopupView_t95DA52547744A7D55544822FB5741489D803D60D  : public PopupViewBase_tFBC0E4A1300BA467E4C0D25F57F2F869156EE8E8
+{
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____messageText;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____loseButton;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____goBackButton;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___LoseClicked;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___GoBackClicked;
+};
+struct WheelView_tF2A4A7CB639EE606FE8CB344835451C1D1564F63  : public UIViewBase_t2B1A9ACDD4D3D27E747078D9FF7080446ECD63E7
+{
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____titleText;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____baseImage;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____indicatorImage;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____subtitleText;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____slicesContainer;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ____spinButton;
+	SliceViewFactory_t33B9C596DD9AA47558F0EF6C642EF70C7E5A59AE* ____sliceFactory;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____animTarget;
+	float ____sliceContentRadius;
+	SpinAnimationSettingsSO_t24437A665BA026F17A0AEBBB326AD10F1BCD0190* ____spinSettings;
+	Sequence_tEADBE56D6ED2E9EE8FB2E5459C3E57131EC0545C* ____spinSequence;
+	Sequence_tEADBE56D6ED2E9EE8FB2E5459C3E57131EC0545C* ____transitionSequence;
+	Tween_t8CB06EBC48A5B6F5065C490E4F4909C18CE7983C* ____idlePulseTween;
+	Tween_t8CB06EBC48A5B6F5065C490E4F4909C18CE7983C* ____tickTween;
+	WheelSliceViewU5BU5D_tB33865E961A91D55F6B3347BD05B2C1113B114F3* ____slices;
+	int32_t ____sliceCount;
+	int32_t ____lastTickSlot;
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___SpinClicked;
+};
+struct ZoneBarView_tC7A8EE253E641854988609C03F55163FE9046FF9  : public UIViewBase_t2B1A9ACDD4D3D27E747078D9FF7080446ECD63E7
+{
+	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ____cellContainer;
+	ZoneCellView_t3778777D6532A5A73265625018C458B5B51C4772* ____cellPrefab;
+	ZoneTypeColorsSO_t9B4C2E4F8DA0BAC9291973882CD5B3D53B4A6164* ____colors;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____highlightImage;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ____highlightGradient;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ____highlightNormal;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ____highlightSafe;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ____highlightSuper;
+	int32_t ____visibleCount;
+	float ____slideDuration;
+	ZoneCellViewU5BU5D_t47CE880D6FDABC29A101A577E041E0136CADD981* ____cells;
+	float ____cellWidth;
+	int32_t ____currentZone;
+	int32_t ____leftmostZone;
+	RuntimeObject* ____zoneRules;
+	Tween_t8CB06EBC48A5B6F5065C490E4F4909C18CE7983C* ____slideTween;
+	int32_t ____pendingRecycleSteps;
+	TweenCallback_t7C8B8A38E7B30905FF1B83C943256EF23617BB24* ____onSlideComplete;
+};
+struct ZoneInfoView_t61281501F7FD1B49284C095D77BFB4F80032C26E  : public UIViewBase_t2B1A9ACDD4D3D27E747078D9FF7080446ECD63E7
+{
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____superValueText;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ____safeValueText;
+	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ____superPanel;
+	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ____safePanel;
+	float ____punchScale;
+	float ____punchDuration;
+	int32_t ____lastSuper;
+	int32_t ____lastSafe;
+};
+struct String_t_StaticFields
+{
+	String_t* ___Empty;
+};
+struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
+{
+	String_t* ___TrueString;
+	String_t* ___FalseString;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
+{
+	int32_t ___OffsetOfInstanceIDInCPlusPlusObject;
+};
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+
+
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_gshared (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m5100B58428BDAD8C79F3D8576B0C2E1D4F3924EB_gshared (Nullable_1_t163D49A1147F217B7BD43BE8ACC8A5CC6B846D14* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_gshared_inline (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* __this, int32_t ___0_obj, const RuntimeMethod* method) ;
+
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Application_set_targetFrameRate_mB90EEA60DAE55CD71C38D4B7DFDBE2B34EA6B46F (int32_t ___0_value, const RuntimeMethod* method) ;
+inline void Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5 (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, bool ___0_value, const RuntimeMethod* method)
+{
+	((  void (*) (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01*, bool, const RuntimeMethod*))Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_gshared)(__this, ___0_value, method);
+}
+inline void Nullable_1__ctor_m4445E1AA3F05926766AD0827B4F2F0922A81A120 (Nullable_1_t93085375A199522C60696471B1FB8B4B7FCB89FD* __this, int32_t ___0_value, const RuntimeMethod* method)
+{
+	((  void (*) (Nullable_1_t93085375A199522C60696471B1FB8B4B7FCB89FD*, int32_t, const RuntimeMethod*))Nullable_1__ctor_m5100B58428BDAD8C79F3D8576B0C2E1D4F3924EB_gshared)(__this, ___0_value, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DOTween_Init_mAD6E37B9B311DFFBCCACAB726DA36D40A7DB8C23 (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 ___0_recycleAllByDefault, Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 ___1_useSafeMode, Nullable_1_t93085375A199522C60696471B1FB8B4B7FCB89FD ___2_logBehaviour, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ZoneRules_t17AC127762ACE9035CF76660D6BF6D8C0E9D7BE6* ZoneProgressionSO_CreateZoneRules_m5CFEA17FDBA8234877B97A06C619F819425ECDE5 (ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ZoneProgressionSO_get_RewardMultiplier_m3921CC947DDB3172D9F40C09B5258964C64A5E8F_inline (ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CurveRewardScaling__ctor_m5421B9FCD81E23B80319AE9ACBBD469826F5090D (CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC* __this, AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ___0_curve, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityRandomProvider__ctor_m7802106555E7266BE06A54A711125EEDA33606A8 (UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SoWheelProvider__ctor_mEFC67EE029C9513B37E208A5D8D1A68A50A1A96E (SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0* __this, ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* ___0_progression, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpinResolver__ctor_m60097F6ADF501DB54FDC8603C9089846E5F4C3FA (SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51* __this, RuntimeObject* ___0_random, RuntimeObject* ___1_scaling, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RewardInventory__ctor_mCA79D99F7335A0A71BBA914CD76AD54788704304 (RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t EconomySettingsSO_get_StartingBalance_m40CE2AAAAF41CE245C947FEC5E31365C3D219473_inline (EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet__ctor_mE2675DF645AD0E973F8EDAE6FC44A2D818E29C98 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_defaultBalance, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* EconomySettingsSO_CreateReviveCostPolicy_m037040BA2F3A2D8164C4850B620766865967452D (EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* EconomySettingsSO_get_CurrencyId_m7E4D4A35DBA9AD94B2B20AC2D85F2CA6B64AD1D5 (EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameSession__ctor_mEF331C39167E223B0529793A5B6CCE96DDBCEEA1 (GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61* __this, RuntimeObject* ___0_zoneRules, RuntimeObject* ___1_wheelProvider, SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51* ___2_spinResolver, RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292* ___3_inventory, RuntimeObject* ___4_wallet, RuntimeObject* ___5_reviveCostPolicy, String_t* ___6_currencyId, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GamePresenter__ctor_mD928D962ECB4CF2FDAA8E3C44BD398535755F961 (GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* __this, GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61* ___0_session, WheelView_tF2A4A7CB639EE606FE8CB344835451C1D1564F63* ___1_wheelView, ZoneBarView_tC7A8EE253E641854988609C03F55163FE9046FF9* ___2_zoneBar, ZoneInfoView_t61281501F7FD1B49284C095D77BFB4F80032C26E* ___3_zoneInfo, CollectedRewardsView_t1BFE7A31D8180A4D976B95B13D063BFD6F259E3D* ___4_rewardsView, RewardFlyAnimator_tB9B4C9ADA13181686A8D465440664777F974F30D* ___5_flyAnimator, ExitButtonView_tB429479FDBBD2DE97B41BAE0F960A4F0C8C11A20* ___6_exitButton, BombPopupView_t5F7F08897B2668432B9993E759B02B149F872EEE* ___7_bombPopup, ConfirmLossPopupView_t95DA52547744A7D55544822FB5741489D803D60D* ___8_confirmLossPopup, CashOutPopupView_tD70467681A21053233C817F491264CA148EAE867* ___9_cashOutPopup, RuntimeObject* ___10_zoneRules, RuntimeObject* ___11_scaling, RewardCatalogSO_t6E8876EFDB29D6A05CFC20F806BEC22B397A1031* ___12_catalog, RuntimeObject* ___13_wallet, WalletView_tAF1D2FCE3E20291B157641394D13826B8CA71969* ___14_walletView, String_t* ___15_currencyId, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GamePresenter_Initialize_mCD2102A053ACC1EC5E67E20C1DE1CF6E0D60D9F2 (GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GamePresenter_Dispose_mE871342DB8BCEB2B15FDB1E0B92A9BE636C4AFAE (GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00 (Delegate_t* ___0_a, Delegate_t* ___1_b, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Delegate_Remove_m8B7DD5661308FA972E23CA1CC3FC9CEB355504E3 (Delegate_t* ___0_source, Delegate_t* ___1_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Math_Max_m530EBA549AFD98CFC2BD29FE86C6376E67DF11CF (int32_t ___0_val1, int32_t ___1_val2, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D (String_t* ___0_key, int32_t ___1_defaultValue, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayerPrefsWallet_set_Balance_m983A88BE62338F0BD4B06A95181CAD2D98210245_inline (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayerPrefsWallet_CanAfford_m1259DF6B4EA110BF2E854442FC88154E94614585 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_amount, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet_Save_m046F9F7664EE59CD970D8D22BD5FA7049D9CFF42 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, const RuntimeMethod* method) ;
+inline void Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_inline (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* __this, int32_t ___0_obj, const RuntimeMethod* method)
+{
+	((  void (*) (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*, int32_t, const RuntimeMethod*))Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_gshared_inline)(__this, ___0_obj, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefs_SetInt_m956D3E2DB966F20CF42F842880DDF9E2BE94D948 (String_t* ___0_key, int32_t ___1_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefs_Save_m82567E045D69C838112EA204B60C144D4C1EA3AE (const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68 (int32_t ___0_minInclusive, int32_t ___1_maxExclusive, const RuntimeMethod* method) ;
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 74020
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameInstaller_Awake_mB9D9D17A441C14972CE99C9287D3CBEA5932C8A8 (GameInstaller_t04C2A17D17ADC3E11823041D316E9E000F64A7C6* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DOTween_t96369E1D40ABE93A56308F57DEA6B04219C66D13_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDOTweenInit_t72D9BFD78C21132CBCD4EEF9B6C99CD17EBE635C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1__ctor_m4445E1AA3F05926766AD0827B4F2F0922A81A120_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	RuntimeObject* V_0 = NULL;
+	RuntimeObject* V_1 = NULL;
+	RuntimeObject* V_2 = NULL;
+	SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51* V_3 = NULL;
+	RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292* V_4 = NULL;
+	RuntimeObject* V_5 = NULL;
+	RuntimeObject* V_6 = NULL;
+	String_t* V_7 = NULL;
+	GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61* V_8 = NULL;
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:38>
+		il2cpp_codegen_runtime_class_init_inline(Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
+		Application_set_targetFrameRate_mB90EEA60DAE55CD71C38D4B7DFDBE2B34EA6B46F(((int32_t)60), NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:39>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:40>
+		Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_0;
+		memset((&L_0), 0, sizeof(L_0));
+		Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5((&L_0), (bool)0, Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
+		Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_1;
+		memset((&L_1), 0, sizeof(L_1));
+		Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5((&L_1), (bool)1, Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
+		Nullable_1_t93085375A199522C60696471B1FB8B4B7FCB89FD L_2;
+		memset((&L_2), 0, sizeof(L_2));
+		Nullable_1__ctor_m4445E1AA3F05926766AD0827B4F2F0922A81A120((&L_2), 2, Nullable_1__ctor_m4445E1AA3F05926766AD0827B4F2F0922A81A120_RuntimeMethod_var);
+		il2cpp_codegen_runtime_class_init_inline(DOTween_t96369E1D40ABE93A56308F57DEA6B04219C66D13_il2cpp_TypeInfo_var);
+		RuntimeObject* L_3;
+		L_3 = DOTween_Init_mAD6E37B9B311DFFBCCACAB726DA36D40A7DB8C23(L_0, L_1, L_2, NULL);
+		NullCheck(L_3);
+		RuntimeObject* L_4;
+		L_4 = InterfaceFuncInvoker2< RuntimeObject*, int32_t, int32_t >::Invoke(0, IDOTweenInit_t72D9BFD78C21132CBCD4EEF9B6C99CD17EBE635C_il2cpp_TypeInfo_var, L_3, ((int32_t)50), ((int32_t)20));
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:42>
+		ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* L_5 = __this->____zoneProgression;
+		NullCheck(L_5);
+		ZoneRules_t17AC127762ACE9035CF76660D6BF6D8C0E9D7BE6* L_6;
+		L_6 = ZoneProgressionSO_CreateZoneRules_m5CFEA17FDBA8234877B97A06C619F819425ECDE5(L_5, NULL);
+		V_0 = L_6;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:43>
+		ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* L_7 = __this->____zoneProgression;
+		NullCheck(L_7);
+		AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* L_8;
+		L_8 = ZoneProgressionSO_get_RewardMultiplier_m3921CC947DDB3172D9F40C09B5258964C64A5E8F_inline(L_7, NULL);
+		CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC* L_9 = (CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC*)il2cpp_codegen_object_new(CurveRewardScaling_t1408696660DC0D7C9E39023D0E2639FEA441CFDC_il2cpp_TypeInfo_var);
+		CurveRewardScaling__ctor_m5421B9FCD81E23B80319AE9ACBBD469826F5090D(L_9, L_8, NULL);
+		V_1 = L_9;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:44>
+		UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B* L_10 = (UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B*)il2cpp_codegen_object_new(UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B_il2cpp_TypeInfo_var);
+		UnityRandomProvider__ctor_m7802106555E7266BE06A54A711125EEDA33606A8(L_10, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:45>
+		ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* L_11 = __this->____zoneProgression;
+		SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0* L_12 = (SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0*)il2cpp_codegen_object_new(SoWheelProvider_tA3872ADB7410728848B19756EE75AC15992586F0_il2cpp_TypeInfo_var);
+		SoWheelProvider__ctor_mEFC67EE029C9513B37E208A5D8D1A68A50A1A96E(L_12, L_11, NULL);
+		V_2 = L_12;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:46>
+		RuntimeObject* L_13 = V_1;
+		SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51* L_14 = (SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51*)il2cpp_codegen_object_new(SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51_il2cpp_TypeInfo_var);
+		SpinResolver__ctor_m60097F6ADF501DB54FDC8603C9089846E5F4C3FA(L_14, L_10, L_13, NULL);
+		V_3 = L_14;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:47>
+		RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292* L_15 = (RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292*)il2cpp_codegen_object_new(RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292_il2cpp_TypeInfo_var);
+		RewardInventory__ctor_mCA79D99F7335A0A71BBA914CD76AD54788704304(L_15, NULL);
+		V_4 = L_15;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:49>
+		V_5 = (RuntimeObject*)NULL;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:50>
+		V_6 = (RuntimeObject*)NULL;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:51>
+		V_7 = (String_t*)NULL;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:53>
+		EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* L_16 = __this->____economySettings;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_17;
+		L_17 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_16, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_17)
+		{
+			goto IL_00a7;
+		}
+	}
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:55>
+		EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* L_18 = __this->____economySettings;
+		NullCheck(L_18);
+		int32_t L_19;
+		L_19 = EconomySettingsSO_get_StartingBalance_m40CE2AAAAF41CE245C947FEC5E31365C3D219473_inline(L_18, NULL);
+		PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* L_20 = (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279*)il2cpp_codegen_object_new(PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279_il2cpp_TypeInfo_var);
+		PlayerPrefsWallet__ctor_mE2675DF645AD0E973F8EDAE6FC44A2D818E29C98(L_20, L_19, NULL);
+		V_5 = L_20;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:56>
+		EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* L_21 = __this->____economySettings;
+		NullCheck(L_21);
+		RuntimeObject* L_22;
+		L_22 = EconomySettingsSO_CreateReviveCostPolicy_m037040BA2F3A2D8164C4850B620766865967452D(L_21, NULL);
+		V_6 = L_22;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:57>
+		EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* L_23 = __this->____economySettings;
+		NullCheck(L_23);
+		String_t* L_24;
+		L_24 = EconomySettingsSO_get_CurrencyId_m7E4D4A35DBA9AD94B2B20AC2D85F2CA6B64AD1D5(L_23, NULL);
+		V_7 = L_24;
+	}
+
+IL_00a7:
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:60>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:61>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:62>
+		RuntimeObject* L_25 = V_0;
+		RuntimeObject* L_26 = V_2;
+		SpinResolver_t6EEA3AF82E31601F193ED6235EAA0121FDF08D51* L_27 = V_3;
+		RewardInventory_t8F16E79B1771C4BBCB140937808B7F3CF3241292* L_28 = V_4;
+		RuntimeObject* L_29 = V_5;
+		RuntimeObject* L_30 = V_6;
+		String_t* L_31 = V_7;
+		GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61* L_32 = (GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61*)il2cpp_codegen_object_new(GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61_il2cpp_TypeInfo_var);
+		GameSession__ctor_mEF331C39167E223B0529793A5B6CCE96DDBCEEA1(L_32, L_25, L_26, L_27, L_28, L_29, L_30, L_31, NULL);
+		V_8 = L_32;
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:64>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:65>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:66>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:67>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:68>
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:69>
+		GameSession_t22FAADF2CE1D011E8F5DBE1424E875551FDFCF61* L_33 = V_8;
+		WheelView_tF2A4A7CB639EE606FE8CB344835451C1D1564F63* L_34 = __this->____wheelView;
+		ZoneBarView_tC7A8EE253E641854988609C03F55163FE9046FF9* L_35 = __this->____zoneBar;
+		ZoneInfoView_t61281501F7FD1B49284C095D77BFB4F80032C26E* L_36 = __this->____zoneInfo;
+		CollectedRewardsView_t1BFE7A31D8180A4D976B95B13D063BFD6F259E3D* L_37 = __this->____rewardsView;
+		RewardFlyAnimator_tB9B4C9ADA13181686A8D465440664777F974F30D* L_38 = __this->____flyAnimator;
+		ExitButtonView_tB429479FDBBD2DE97B41BAE0F960A4F0C8C11A20* L_39 = __this->____exitButton;
+		BombPopupView_t5F7F08897B2668432B9993E759B02B149F872EEE* L_40 = __this->____bombPopup;
+		ConfirmLossPopupView_t95DA52547744A7D55544822FB5741489D803D60D* L_41 = __this->____confirmLossPopup;
+		CashOutPopupView_tD70467681A21053233C817F491264CA148EAE867* L_42 = __this->____cashOutPopup;
+		RuntimeObject* L_43 = V_0;
+		RuntimeObject* L_44 = V_1;
+		RewardCatalogSO_t6E8876EFDB29D6A05CFC20F806BEC22B397A1031* L_45 = __this->____rewardCatalog;
+		RuntimeObject* L_46 = V_5;
+		WalletView_tAF1D2FCE3E20291B157641394D13826B8CA71969* L_47 = __this->____walletView;
+		String_t* L_48 = V_7;
+		GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* L_49 = (GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595*)il2cpp_codegen_object_new(GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595_il2cpp_TypeInfo_var);
+		GamePresenter__ctor_mD928D962ECB4CF2FDAA8E3C44BD398535755F961(L_49, L_33, L_34, L_35, L_36, L_37, L_38, L_39, L_40, L_41, L_42, L_43, L_44, L_45, L_46, L_47, L_48, NULL);
+		__this->____presenter = L_49;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____presenter), (void*)L_49);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:70>
+		GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* L_50 = __this->____presenter;
+		NullCheck(L_50);
+		GamePresenter_Initialize_mCD2102A053ACC1EC5E67E20C1DE1CF6E0D60D9F2(L_50, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:71>
+		return;
+	}
+}
+// Method Definition Index: 74021
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameInstaller_OnDestroy_mF311FC47FF123D7A7743679A3D20E7BECC8569F4 (GameInstaller_t04C2A17D17ADC3E11823041D316E9E000F64A7C6* __this, const RuntimeMethod* method) 
+{
+	GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* G_B2_0 = NULL;
+	GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* G_B1_0 = NULL;
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:75>
+		GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* L_0 = __this->____presenter;
+		GamePresenter_t0306A619DB3B78494E3EBAEB66C74080B69F7595* L_1 = L_0;
+		if (L_1)
+		{
+			G_B2_0 = L_1;
+			goto IL_000b;
+		}
+		G_B1_0 = L_1;
+	}
+	{
+		return;
+	}
+
+IL_000b:
+	{
+		NullCheck(G_B2_0);
+		GamePresenter_Dispose_mE871342DB8BCEB2B15FDB1E0B92A9BE636C4AFAE(G_B2_0, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/GameInstaller.cs:76>
+		return;
+	}
+}
+// Method Definition Index: 74022
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameInstaller__ctor_m7BFE0092511B9D27906A9C2D59102C9F03447388 (GameInstaller_t04C2A17D17ADC3E11823041D316E9E000F64A7C6* __this, const RuntimeMethod* method) 
+{
+	//<source_info:<no-source>:1>
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 74023
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:14>
+		int32_t L_0 = __this->___U3CBalanceU3Ek__BackingField;
+		return L_0;
+	}
+}
+// Method Definition Index: 74024
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet_set_Balance_m983A88BE62338F0BD4B06A95181CAD2D98210245 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:14>
+		int32_t L_0 = ___0_value;
+		__this->___U3CBalanceU3Ek__BackingField = L_0;
+		return;
+	}
+}
+// Method Definition Index: 74025
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet_add_BalanceChanged_m5C95502867B3AC8AB5FD866544268458AD0DF409 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	//<source_info:<no-source>:1>
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* V_0 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* V_1 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* V_2 = NULL;
+	{
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_0 = __this->___BalanceChanged;
+		V_0 = L_0;
+	}
+
+IL_0007:
+	{
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_1 = V_0;
+		V_1 = L_1;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_2 = V_1;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_3 = ___0_value;
+		Delegate_t* L_4;
+		L_4 = Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00(L_2, L_3, NULL);
+		V_2 = ((Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)Castclass((RuntimeObject*)L_4, Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var));
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404** L_5 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404**)(&__this->___BalanceChanged);
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_6 = V_2;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_7 = V_1;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_8;
+		L_8 = InterlockedCompareExchangeImpl<Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*>(L_5, L_6, L_7);
+		V_0 = L_8;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_9 = V_0;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_10 = V_1;
+		if ((!(((RuntimeObject*)(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)L_9) == ((RuntimeObject*)(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)L_10))))
+		{
+			goto IL_0007;
+		}
+	}
+	{
+		return;
+	}
+}
+// Method Definition Index: 74026
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet_remove_BalanceChanged_mCB2FAAD7A3D1E34867EC149E1C882025DE893DA8 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	//<source_info:<no-source>:1>
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* V_0 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* V_1 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* V_2 = NULL;
+	{
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_0 = __this->___BalanceChanged;
+		V_0 = L_0;
+	}
+
+IL_0007:
+	{
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_1 = V_0;
+		V_1 = L_1;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_2 = V_1;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_3 = ___0_value;
+		Delegate_t* L_4;
+		L_4 = Delegate_Remove_m8B7DD5661308FA972E23CA1CC3FC9CEB355504E3(L_2, L_3, NULL);
+		V_2 = ((Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)Castclass((RuntimeObject*)L_4, Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var));
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404** L_5 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404**)(&__this->___BalanceChanged);
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_6 = V_2;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_7 = V_1;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_8;
+		L_8 = InterlockedCompareExchangeImpl<Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*>(L_5, L_6, L_7);
+		V_0 = L_8;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_9 = V_0;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_10 = V_1;
+		if ((!(((RuntimeObject*)(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)L_9) == ((RuntimeObject*)(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)L_10))))
+		{
+			goto IL_0007;
+		}
+	}
+	{
+		return;
+	}
+}
+// Method Definition Index: 74027
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet__ctor_mE2675DF645AD0E973F8EDAE6FC44A2D818E29C98 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_defaultBalance, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE9AC01D2676390AF3FEBAD5E63F720B49628893D);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:18>
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:20>
+		int32_t L_0 = ___0_defaultBalance;
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		int32_t L_1;
+		L_1 = Math_Max_m530EBA549AFD98CFC2BD29FE86C6376E67DF11CF(0, L_0, NULL);
+		int32_t L_2;
+		L_2 = PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D(_stringLiteralE9AC01D2676390AF3FEBAD5E63F720B49628893D, L_1, NULL);
+		PlayerPrefsWallet_set_Balance_m983A88BE62338F0BD4B06A95181CAD2D98210245_inline(__this, L_2, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:21>
+		return;
+	}
+}
+// Method Definition Index: 74028
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayerPrefsWallet_CanAfford_m1259DF6B4EA110BF2E854442FC88154E94614585 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_amount, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:23>
+		int32_t L_0 = ___0_amount;
+		if ((((int32_t)L_0) < ((int32_t)0)))
+		{
+			goto IL_0011;
+		}
+	}
+	{
+		int32_t L_1;
+		L_1 = PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline(__this, NULL);
+		int32_t L_2 = ___0_amount;
+		return (bool)((((int32_t)((((int32_t)L_1) < ((int32_t)L_2))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+	}
+
+IL_0011:
+	{
+		return (bool)0;
+	}
+}
+// Method Definition Index: 74029
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayerPrefsWallet_TrySpend_m7C960EAD02C7D4559847B02DA76657AEB2B2FFB9 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_amount, const RuntimeMethod* method) 
+{
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B4_0 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B3_0 = NULL;
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:27>
+		int32_t L_0 = ___0_amount;
+		bool L_1;
+		L_1 = PlayerPrefsWallet_CanAfford_m1259DF6B4EA110BF2E854442FC88154E94614585(__this, L_0, NULL);
+		if (L_1)
+		{
+			goto IL_000b;
+		}
+	}
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:27>
+		return (bool)0;
+	}
+
+IL_000b:
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:28>
+		int32_t L_2;
+		L_2 = PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline(__this, NULL);
+		int32_t L_3 = ___0_amount;
+		PlayerPrefsWallet_set_Balance_m983A88BE62338F0BD4B06A95181CAD2D98210245_inline(__this, ((int32_t)il2cpp_codegen_subtract(L_2, L_3)), NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:29>
+		PlayerPrefsWallet_Save_m046F9F7664EE59CD970D8D22BD5FA7049D9CFF42(__this, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:30>
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_4 = __this->___BalanceChanged;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_5 = L_4;
+		if (L_5)
+		{
+			G_B4_0 = L_5;
+			goto IL_002b;
+		}
+		G_B3_0 = L_5;
+	}
+	{
+		goto IL_0036;
+	}
+
+IL_002b:
+	{
+		int32_t L_6;
+		L_6 = PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline(__this, NULL);
+		NullCheck(G_B4_0);
+		Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_inline(G_B4_0, L_6, NULL);
+	}
+
+IL_0036:
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:31>
+		return (bool)1;
+	}
+}
+// Method Definition Index: 74030
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet_Add_m19B2B458232A6F0B24BF617C3D9BFE82B60CD695 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_amount, const RuntimeMethod* method) 
+{
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B4_0 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B3_0 = NULL;
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:36>
+		int32_t L_0 = ___0_amount;
+		if ((((int32_t)L_0) > ((int32_t)0)))
+		{
+			goto IL_0005;
+		}
+	}
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:36>
+		return;
+	}
+
+IL_0005:
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:37>
+		int32_t L_1;
+		L_1 = PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline(__this, NULL);
+		int32_t L_2 = ___0_amount;
+		PlayerPrefsWallet_set_Balance_m983A88BE62338F0BD4B06A95181CAD2D98210245_inline(__this, ((int32_t)il2cpp_codegen_add(L_1, L_2)), NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:38>
+		PlayerPrefsWallet_Save_m046F9F7664EE59CD970D8D22BD5FA7049D9CFF42(__this, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:39>
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_3 = __this->___BalanceChanged;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_4 = L_3;
+		if (L_4)
+		{
+			G_B4_0 = L_4;
+			goto IL_0024;
+		}
+		G_B3_0 = L_4;
+	}
+	{
+		return;
+	}
+
+IL_0024:
+	{
+		int32_t L_5;
+		L_5 = PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline(__this, NULL);
+		NullCheck(G_B4_0);
+		Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_inline(G_B4_0, L_5, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:40>
+		return;
+	}
+}
+// Method Definition Index: 74031
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefsWallet_Save_m046F9F7664EE59CD970D8D22BD5FA7049D9CFF42 (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE9AC01D2676390AF3FEBAD5E63F720B49628893D);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:44>
+		int32_t L_0;
+		L_0 = PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline(__this, NULL);
+		PlayerPrefs_SetInt_m956D3E2DB966F20CF42F842880DDF9E2BE94D948(_stringLiteralE9AC01D2676390AF3FEBAD5E63F720B49628893D, L_0, NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:45>
+		PlayerPrefs_Save_m82567E045D69C838112EA204B60C144D4C1EA3AE(NULL);
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:46>
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 74032
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t UnityRandomProvider_Range_m79D483CFA5497EB856CC7CB9CCC3110D8C90F07B (UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B* __this, int32_t ___0_minInclusive, int32_t ___1_maxExclusive, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/UnityRandomProvider.cs:12>
+		int32_t L_0 = ___0_minInclusive;
+		int32_t L_1 = ___1_maxExclusive;
+		int32_t L_2;
+		L_2 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(L_0, L_1, NULL);
+		return L_2;
+	}
+}
+// Method Definition Index: 74033
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityRandomProvider__ctor_m7802106555E7266BE06A54A711125EEDA33606A8 (UnityRandomProvider_t82D8DFA0EDD17B093FE9FAEC1D52C3E1BC7FC70B* __this, const RuntimeMethod* method) 
+{
+	//<source_info:<no-source>:1>
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Method Definition Index: 73919
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* ZoneProgressionSO_get_RewardMultiplier_m3921CC947DDB3172D9F40C09B5258964C64A5E8F_inline (ZoneProgressionSO_tFF7795AAD5CFE30DF959F58766583A50886FE199* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Data/ZoneProgressionSO.cs:30>
+		AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* L_0 = __this->____rewardMultiplier;
+		return L_0;
+	}
+}
+// Method Definition Index: 73850
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t EconomySettingsSO_get_StartingBalance_m40CE2AAAAF41CE245C947FEC5E31365C3D219473_inline (EconomySettingsSO_t2AA68CD23BF5D54DBDFFC9248B4B0B7A755C791B* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Data/EconomySettingsSO.cs:22>
+		int32_t L_0 = __this->____startingBalance;
+		return L_0;
+	}
+}
+// Method Definition Index: 74024
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayerPrefsWallet_set_Balance_m983A88BE62338F0BD4B06A95181CAD2D98210245_inline (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:14>
+		int32_t L_0 = ___0_value;
+		__this->___U3CBalanceU3Ek__BackingField = L_0;
+		return;
+	}
+}
+// Method Definition Index: 74023
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PlayerPrefsWallet_get_Balance_mFE3DA8E522A5F166A83F0E70D79D11CF6166BA0E_inline (PlayerPrefsWallet_tFC6E04D461C3C481EFEEAC9BED05AC2FD582E279* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/egeni/Desktop/Eges_Codes/Case_Vertigo_2026/Case Vertigo 2026/Assets/_Project/Scripts/Infrastructure/PlayerPrefsWallet.cs:14>
+		int32_t L_0 = __this->___U3CBalanceU3Ek__BackingField;
+		return L_0;
+	}
+}
+// Method Definition Index: 12697
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_gshared_inline (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* __this, int32_t ___0_obj, const RuntimeMethod* method) 
+{
+	//<source_info:<no-source>:1>
+	typedef void (*FunctionPointerType) (RuntimeObject*, int32_t, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method));
+}
