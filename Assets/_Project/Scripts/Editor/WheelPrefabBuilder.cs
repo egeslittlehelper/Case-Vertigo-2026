@@ -33,7 +33,7 @@ namespace VertigoCase.Editor
 
             var content = CreateUIChild(root, "ui_container_slice_content");
             var contentRt = content.GetComponent<RectTransform>();
-            contentRt.sizeDelta = new Vector2(100f, 110f);
+            contentRt.sizeDelta = new Vector2(120f, 140f);
             contentRt.pivot = new Vector2(0.5f, 0.5f);
 
             var iconObj = CreateUIChild(content, "ui_image_slice_icon_value");
@@ -45,8 +45,8 @@ namespace VertigoCase.Editor
             iconRt.anchorMin = new Vector2(0.5f, 0.5f);
             iconRt.anchorMax = new Vector2(0.5f, 0.5f);
             iconRt.pivot = new Vector2(0.5f, 0.5f);
-            iconRt.sizeDelta = new Vector2(72f, 72f);
-            iconRt.anchoredPosition = new Vector2(0f, 14f);
+            iconRt.sizeDelta = new Vector2(90f, 90f);
+            iconRt.anchoredPosition = Vector2.zero;
 
             var textObj = CreateUIChild(content, "ui_text_slice_amount_value");
             var tmp = textObj.AddComponent<TextMeshProUGUI>();
@@ -56,13 +56,13 @@ namespace VertigoCase.Editor
             tmp.alignment = TextAlignmentOptions.Center;
             tmp.enableAutoSizing = true;
             tmp.fontSizeMin = 6f;
-            tmp.fontSizeMax = 20f;
+            tmp.fontSizeMax = 18f;
             var textRt = textObj.GetComponent<RectTransform>();
             textRt.anchorMin = new Vector2(0.5f, 0.5f);
             textRt.anchorMax = new Vector2(0.5f, 0.5f);
             textRt.pivot = new Vector2(0.5f, 0.5f);
-            textRt.sizeDelta = new Vector2(90f, 26f);
-            textRt.anchoredPosition = new Vector2(0f, -20f);
+            textRt.sizeDelta = new Vector2(100f, 24f);
+            textRt.anchoredPosition = new Vector2(0f, -52f);
 
             PrefabUtility.SaveAsPrefabAsset(root, path);
             Object.DestroyImmediate(root);

@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: Zone Progression SO
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.ZoneProgressionSO
   _safeInterval: 5
-  _superInterval: 6
+  _superInterval: 30
   _rewardMultiplier:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 1
+      time: 0
       value: 1
       inSlope: 0
-      outSlope: 0.15254237
-      tangentMode: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 60
-      value: 10
-      inSlope: 0.15254237
+      time: 1
+      value: 1
+      inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -43,5 +43,13 @@ MonoBehaviour:
     _wheel: {fileID: 11400000, guid: 15d91d93cb3bb844480c688d57bedf6a, type: 2}
   - _minZone: 5
     _wheel: {fileID: 11400000, guid: 6faba39acd977f84bbed54ecb489c70d, type: 2}
-  _safeWheel: {fileID: 11400000, guid: 8d991bfcd23d7a54d9073ecaa4d5fe60, type: 2}
-  _superWheel: {fileID: 11400000, guid: ef5671800be37ad4c85a75f184be096e, type: 2}
+  - _minZone: 10
+    _wheel: {fileID: 11400000, guid: 3e928629df190e2428d83d01068ed23e, type: 2}
+  - _minZone: 15
+    _wheel: {fileID: 11400000, guid: 961f323388e24dc4e883e526c6dea908, type: 2}
+  - _minZone: 20
+    _wheel: {fileID: 11400000, guid: 199aaee6cec20714e90a0e5556a418c8, type: 2}
+  - _minZone: 25
+    _wheel: {fileID: 11400000, guid: db69dacbf62bfe64698a50a10537eaa2, type: 2}
+  _safeWheel: {fileID: 11400000, guid: ef5671800be37ad4c85a75f184be096e, type: 2}
+  _superWheel: {fileID: 11400000, guid: 8d991bfcd23d7a54d9073ecaa4d5fe60, type: 2}

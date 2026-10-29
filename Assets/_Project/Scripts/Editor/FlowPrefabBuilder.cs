@@ -12,6 +12,12 @@ namespace VertigoCase.Editor
     public static class FlowPrefabBuilder
     {
         private const string PrefabFolder = "Assets/_Project/Prefabs/UI";
+        private const string ButtonSpritePath = "Assets/_Project/Art/Sprites/UI_button_grey_standard.png";
+
+        private static Sprite LoadButtonSprite()
+        {
+            return AssetDatabase.LoadAssetAtPath<Sprite>(ButtonSpritePath);
+        }
 
         [MenuItem("VertigoCase/Build Flow Prefabs")]
         public static void BuildAll()
@@ -41,6 +47,7 @@ namespace VertigoCase.Editor
             img.raycastTarget = true;
             img.maskable = false;
             img.type = Image.Type.Sliced;
+            img.sprite = LoadButtonSprite();
             var btn = root.AddComponent<Button>();
             btn.targetGraphic = img;
 
@@ -123,7 +130,7 @@ namespace VertigoCase.Editor
             titleTmp.alignment = TextAlignmentOptions.Center;
             titleTmp.enableAutoSizing = true;
             titleTmp.fontSizeMin = 20f;
-            titleTmp.fontSizeMax = 40f;
+            titleTmp.fontSizeMax = 80f;
             titleTmp.fontStyle = FontStyles.Bold;
             titleTmp.color = Color.white;
             var titleRt = titleObj.GetComponent<RectTransform>();
@@ -140,7 +147,7 @@ namespace VertigoCase.Editor
             lostTmp.alignment = TextAlignmentOptions.Center;
             lostTmp.enableAutoSizing = true;
             lostTmp.fontSizeMin = 14f;
-            lostTmp.fontSizeMax = 24f;
+            lostTmp.fontSizeMax = 48f;
             lostTmp.color = new Color(0.8f, 0.8f, 0.8f, 1f);
             var lostRt = lostObj.GetComponent<RectTransform>();
             lostRt.anchorMin = new Vector2(0.08f, 0.74f);
@@ -164,7 +171,8 @@ namespace VertigoCase.Editor
             giveUpImg.raycastTarget = true;
             giveUpImg.maskable = false;
             giveUpImg.type = Image.Type.Sliced;
-            giveUpImg.color = new Color(0.3f, 0.3f, 0.35f, 1f);
+            giveUpImg.sprite = LoadButtonSprite();
+            giveUpImg.color = Color.white;
             var giveUpBtn = giveUpObj.AddComponent<Button>();
             giveUpBtn.targetGraphic = giveUpImg;
             var giveUpRt = giveUpObj.GetComponent<RectTransform>();
@@ -180,7 +188,7 @@ namespace VertigoCase.Editor
             giveUpTmp.alignment = TextAlignmentOptions.Center;
             giveUpTmp.enableAutoSizing = true;
             giveUpTmp.fontSizeMin = 16f;
-            giveUpTmp.fontSizeMax = 32f;
+            giveUpTmp.fontSizeMax = 64f;
             giveUpTmp.fontStyle = FontStyles.Bold;
             giveUpTmp.color = Color.white;
             var giveUpLabelRt = giveUpLabel.GetComponent<RectTransform>();
@@ -194,15 +202,16 @@ namespace VertigoCase.Editor
             reviveImg.raycastTarget = true;
             reviveImg.maskable = false;
             reviveImg.type = Image.Type.Sliced;
+            reviveImg.sprite = LoadButtonSprite();
             reviveImg.color = new Color(0.2f, 0.7f, 0.2f, 1f);
             var reviveBtn = reviveObj.AddComponent<Button>();
             reviveBtn.targetGraphic = reviveImg;
-            reviveObj.SetActive(false);
             var reviveRt = reviveObj.GetComponent<RectTransform>();
             reviveRt.anchorMin = new Vector2(0.52f, 0.04f);
             reviveRt.anchorMax = new Vector2(0.95f, 0.18f);
             reviveRt.sizeDelta = Vector2.zero;
 
+            // "REVIVE" label — upper portion of button
             var reviveLabel = CreateUIChild(reviveObj, "ui_text_popup_bomb_revive_label");
             var reviveTmp = reviveLabel.AddComponent<TextMeshProUGUI>();
             reviveTmp.raycastTarget = false;
@@ -211,23 +220,45 @@ namespace VertigoCase.Editor
             reviveTmp.alignment = TextAlignmentOptions.Center;
             reviveTmp.enableAutoSizing = true;
             reviveTmp.fontSizeMin = 16f;
-            reviveTmp.fontSizeMax = 32f;
+            reviveTmp.fontSizeMax = 64f;
             reviveTmp.fontStyle = FontStyles.Bold;
             reviveTmp.color = Color.white;
             var reviveLabelRt = reviveLabel.GetComponent<RectTransform>();
-            reviveLabelRt.anchorMin = Vector2.zero;
+            reviveLabelRt.anchorMin = new Vector2(0f, 0.4f);
             reviveLabelRt.anchorMax = Vector2.one;
             reviveLabelRt.sizeDelta = Vector2.zero;
 
+            // Currency icon — bottom-left of button
+            var reviveIconObj = CreateUIChild(reviveObj, "ui_image_popup_bomb_revive_icon_value");
+            var reviveIconImg = reviveIconObj.AddComponent<Image>();
+            reviveIconImg.raycastTarget = false;
+            reviveIconImg.maskable = false;
+            reviveIconImg.preserveAspect = true;
+            reviveIconImg.enabled = false;
+            var reviveIconRt = reviveIconObj.GetComponent<RectTransform>();
+            reviveIconRt.anchorMin = new Vector2(0.05f, 0f);
+            reviveIconRt.anchorMax = new Vector2(0.5f, 0.4f);
+            reviveIconRt.pivot = new Vector2(0.5f, 0.5f);
+            reviveIconRt.sizeDelta = Vector2.zero;
+
+            // Cost text — bottom-right of button, next to icon
             var reviveCostObj = CreateUIChild(reviveObj, "ui_text_popup_bomb_revive_cost_value");
             var reviveCostTmp = reviveCostObj.AddComponent<TextMeshProUGUI>();
             reviveCostTmp.raycastTarget = false;
             reviveCostTmp.maskable = false;
             reviveCostTmp.text = "100";
             reviveCostTmp.alignment = TextAlignmentOptions.Center;
-            reviveCostTmp.fontSize = 20f;
+            reviveCostTmp.enableAutoSizing = true;
+            reviveCostTmp.fontSizeMin = 12f;
+            reviveCostTmp.fontSizeMax = 48f;
+            reviveCostTmp.fontStyle = FontStyles.Bold;
             reviveCostTmp.color = Color.white;
+            var reviveCostRt = reviveCostObj.GetComponent<RectTransform>();
+            reviveCostRt.anchorMin = new Vector2(0.5f, 0f);
+            reviveCostRt.anchorMax = new Vector2(0.95f, 0.4f);
+            reviveCostRt.sizeDelta = Vector2.zero;
 
+            reviveObj.SetActive(false);
             root.SetActive(false);
             PrefabUtility.SaveAsPrefabAsset(root, path);
             Object.DestroyImmediate(root);
@@ -287,7 +318,7 @@ namespace VertigoCase.Editor
             msgTmp.alignment = TextAlignmentOptions.Center;
             msgTmp.enableAutoSizing = true;
             msgTmp.fontSizeMin = 18f;
-            msgTmp.fontSizeMax = 36f;
+            msgTmp.fontSizeMax = 72f;
             msgTmp.fontStyle = FontStyles.Bold;
             msgTmp.color = Color.white;
             var msgRt = msgObj.GetComponent<RectTransform>();
@@ -301,6 +332,7 @@ namespace VertigoCase.Editor
             loseImg.raycastTarget = true;
             loseImg.maskable = false;
             loseImg.type = Image.Type.Sliced;
+            loseImg.sprite = LoadButtonSprite();
             loseImg.color = new Color(0.7f, 0.15f, 0.15f, 1f);
             var loseBtn = loseObj.AddComponent<Button>();
             loseBtn.targetGraphic = loseImg;
@@ -317,7 +349,7 @@ namespace VertigoCase.Editor
             loseTmp.alignment = TextAlignmentOptions.Center;
             loseTmp.enableAutoSizing = true;
             loseTmp.fontSizeMin = 14f;
-            loseTmp.fontSizeMax = 26f;
+            loseTmp.fontSizeMax = 52f;
             loseTmp.fontStyle = FontStyles.Bold;
             loseTmp.color = Color.white;
             var loseLabelRt = loseLabelObj.GetComponent<RectTransform>();
@@ -331,6 +363,7 @@ namespace VertigoCase.Editor
             backImg.raycastTarget = true;
             backImg.maskable = false;
             backImg.type = Image.Type.Sliced;
+            backImg.sprite = LoadButtonSprite();
             backImg.color = new Color(0.3f, 0.3f, 0.35f, 1f);
             var backBtn = backObj.AddComponent<Button>();
             backBtn.targetGraphic = backImg;
@@ -347,7 +380,7 @@ namespace VertigoCase.Editor
             backTmp.alignment = TextAlignmentOptions.Center;
             backTmp.enableAutoSizing = true;
             backTmp.fontSizeMin = 14f;
-            backTmp.fontSizeMax = 26f;
+            backTmp.fontSizeMax = 52f;
             backTmp.fontStyle = FontStyles.Bold;
             backTmp.color = Color.white;
             var backLabelRt = backLabelObj.GetComponent<RectTransform>();
@@ -408,20 +441,36 @@ namespace VertigoCase.Editor
             var titleTmp = titleObj.AddComponent<TextMeshProUGUI>();
             titleTmp.raycastTarget = false;
             titleTmp.maskable = false;
-            titleTmp.text = "REWARDS COLLECTED!";
+            titleTmp.text = "Are you sure you want to exit?\nBest rewards are at the end!";
             titleTmp.alignment = TextAlignmentOptions.Center;
-            titleTmp.fontSize = 40f;
+            titleTmp.enableAutoSizing = true;
+            titleTmp.fontSizeMin = 16f;
+            titleTmp.fontSizeMax = 72f;
             titleTmp.fontStyle = FontStyles.Bold;
             var titleRt = titleObj.GetComponent<RectTransform>();
             titleRt.anchorMin = new Vector2(0f, 0.85f);
             titleRt.anchorMax = new Vector2(1f, 0.98f);
             titleRt.sizeDelta = Vector2.zero;
 
-            // Rewards list container
-            var listObj = CreateUIChild(animObj, "ui_container_popup_cashout_rewards");
+            // Scroll area for rewards list
+            var scrollObj = CreateUIChild(animObj, "ui_scroll_popup_cashout_rewards");
+            var scrollRt = scrollObj.GetComponent<RectTransform>();
+            scrollRt.anchorMin = new Vector2(0.05f, 0.15f);
+            scrollRt.anchorMax = new Vector2(0.95f, 0.82f);
+            scrollRt.sizeDelta = Vector2.zero;
+
+            var viewport = CreateUIChild(scrollObj, "ui_viewport_popup_cashout_rewards");
+            viewport.AddComponent<RectMask2D>();
+            var viewportRt = viewport.GetComponent<RectTransform>();
+            viewportRt.anchorMin = Vector2.zero;
+            viewportRt.anchorMax = Vector2.one;
+            viewportRt.sizeDelta = Vector2.zero;
+
+            var listObj = CreateUIChild(viewport, "ui_container_popup_cashout_rewards");
             var listRt = listObj.GetComponent<RectTransform>();
-            listRt.anchorMin = new Vector2(0.05f, 0.15f);
-            listRt.anchorMax = new Vector2(0.95f, 0.82f);
+            listRt.anchorMin = new Vector2(0f, 1f);
+            listRt.anchorMax = new Vector2(1f, 1f);
+            listRt.pivot = new Vector2(0.5f, 1f);
             listRt.sizeDelta = Vector2.zero;
 
             var layout = listObj.AddComponent<VerticalLayoutGroup>();
@@ -433,31 +482,78 @@ namespace VertigoCase.Editor
             layout.childForceExpandWidth = true;
             layout.childForceExpandHeight = false;
 
-            // Continue button
+            var fitter = listObj.AddComponent<ContentSizeFitter>();
+            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
+            var scrollRect = scrollObj.AddComponent<ScrollRect>();
+            scrollRect.content = listRt;
+            scrollRect.viewport = viewportRt;
+            scrollRect.horizontal = false;
+            scrollRect.vertical = true;
+            scrollRect.movementType = ScrollRect.MovementType.Elastic;
+            scrollRect.scrollSensitivity = 20f;
+
+            // Collect button — right side
             var continueObj = CreateUIChild(animObj, "ui_button_popup_cashout_continue");
             var continueImg = continueObj.AddComponent<Image>();
             continueImg.raycastTarget = true;
             continueImg.maskable = false;
             continueImg.type = Image.Type.Sliced;
+            continueImg.sprite = LoadButtonSprite();
+            continueImg.color = new Color(0.2f, 0.7f, 0.2f, 1f);
             var continueBtn = continueObj.AddComponent<Button>();
             continueBtn.targetGraphic = continueImg;
             var continueRt = continueObj.GetComponent<RectTransform>();
-            continueRt.anchorMin = new Vector2(0.25f, 0.02f);
-            continueRt.anchorMax = new Vector2(0.75f, 0.12f);
+            continueRt.anchorMin = new Vector2(0.52f, 0.02f);
+            continueRt.anchorMax = new Vector2(0.95f, 0.12f);
             continueRt.sizeDelta = Vector2.zero;
 
             var continueLabelObj = CreateUIChild(continueObj, "ui_text_popup_cashout_continue_label");
             var continueTmp = continueLabelObj.AddComponent<TextMeshProUGUI>();
             continueTmp.raycastTarget = false;
             continueTmp.maskable = false;
-            continueTmp.text = "PLAY AGAIN";
+            continueTmp.text = "COLLECT";
             continueTmp.alignment = TextAlignmentOptions.Center;
-            continueTmp.fontSize = 32f;
+            continueTmp.enableAutoSizing = true;
+            continueTmp.fontSizeMin = 16f;
+            continueTmp.fontSizeMax = 64f;
             continueTmp.fontStyle = FontStyles.Bold;
+            continueTmp.color = Color.white;
             var continueLabelRt = continueLabelObj.GetComponent<RectTransform>();
             continueLabelRt.anchorMin = Vector2.zero;
             continueLabelRt.anchorMax = Vector2.one;
             continueLabelRt.sizeDelta = Vector2.zero;
+
+            // Go Back button — left side
+            var backObj = CreateUIChild(animObj, "ui_button_popup_cashout_back");
+            var backImg = backObj.AddComponent<Image>();
+            backImg.raycastTarget = true;
+            backImg.maskable = false;
+            backImg.type = Image.Type.Sliced;
+            backImg.sprite = LoadButtonSprite();
+            backImg.color = new Color(0.3f, 0.3f, 0.35f, 1f);
+            var backBtn = backObj.AddComponent<Button>();
+            backBtn.targetGraphic = backImg;
+            var backRt = backObj.GetComponent<RectTransform>();
+            backRt.anchorMin = new Vector2(0.05f, 0.02f);
+            backRt.anchorMax = new Vector2(0.48f, 0.12f);
+            backRt.sizeDelta = Vector2.zero;
+
+            var backLabelObj = CreateUIChild(backObj, "ui_text_popup_cashout_back_label");
+            var backTmp = backLabelObj.AddComponent<TextMeshProUGUI>();
+            backTmp.raycastTarget = false;
+            backTmp.maskable = false;
+            backTmp.text = "GO BACK";
+            backTmp.alignment = TextAlignmentOptions.Center;
+            backTmp.enableAutoSizing = true;
+            backTmp.fontSizeMin = 16f;
+            backTmp.fontSizeMax = 64f;
+            backTmp.fontStyle = FontStyles.Bold;
+            backTmp.color = Color.white;
+            var backLabelRt = backLabelObj.GetComponent<RectTransform>();
+            backLabelRt.anchorMin = Vector2.zero;
+            backLabelRt.anchorMax = Vector2.one;
+            backLabelRt.sizeDelta = Vector2.zero;
 
             // Wire entry prefab
             var entryPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(entryPrefabPath);
@@ -495,5 +591,6 @@ namespace VertigoCase.Editor
             go.transform.SetParent(parent.transform, false);
             return go;
         }
+
     }
 }

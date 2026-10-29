@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c7f231a62a72f4b9cd4bf002305622, type: 3}
+  m_Name: UI Animation Settings SO
+  m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.UIAnimationSettingsSO
+  _popupFadeDuration: 0.2
+  _popupScaleDuration: 0.3
+  _popupShowEase: 27
+  _popupHideEase: 26
+  _buttonPressScale: 0.9
+  _buttonPressDuration: 0.08
+  _buttonPressEase: 6
+  _flyDuration: 0.5
+  _flyStagger: 0.04

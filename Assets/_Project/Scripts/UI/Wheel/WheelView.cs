@@ -32,8 +32,11 @@ namespace VertigoCase.UI
 
         private Sequence _spinSequence;
         private Sequence _transitionSequence;
+        private Tween _idlePulseTween;
+        private Tween _tickTween;
         private WheelSliceView[] _slices;
         private int _sliceCount;
+        private int _lastTickSlot;
 
         public event Action SpinClicked;
 
@@ -99,6 +102,8 @@ namespace VertigoCase.UI
         public void PlaySpin(int sliceIndex, Action onComplete)
         {
             SetInteractable(false);
+            StopIdlePulse();
+            ResetSliceVisuals();
             NormalizeRotation();
 
             float jitter = UnityEngine.Random.Range(-_spinSettings.LandingJitter, _spinSettings.LandingJitter);
@@ -106,16 +111,44 @@ namespace VertigoCase.UI
                 sliceIndex, _sliceCount, _spinSettings.ExtraFullTurns, jitter);
             float exactCenter = WheelAngleCalculator.TargetRotation(
                 sliceIndex, _sliceCount, _spinSettings.ExtraFullTurns, 0f);
+            float overshoot = _spinSettings.SettleOvershoot;
+            float sliceAngle = _sliceCount > 0 ? 360f / _sliceCount : 360f;
+
+            float startZ = _animTarget.localEulerAngles.z;
+            _lastTickSlot = Mathf.FloorToInt(startZ / sliceAngle);
 
             _spinSequence?.Kill();
             _spinSequence = DOTween.Sequence();
 
-            float overshoot = _spinSettings.SettleOvershoot;
+            if (_spinSettings.AnticipationAngle > 0f)
+            {
+                _spinSequence.Append(
+                    _animTarget
+                        .DOLocalRotate(new Vector3(0f, 0f, -_spinSettings.AnticipationAngle),
+                            _spinSettings.AnticipationDuration)
+                        .SetEase(Ease.OutQuad));
+            }
 
-            _spinSequence.Append(
-                _animTarget
-                    .DOLocalRotate(new Vector3(0f, 0f, jitteredTarget + overshoot), _spinSettings.Duration, RotateMode.FastBeyond360)
-                    .SetEase(_spinSettings.SpinEase));
+            var mainSpin = _animTarget
+                .DOLocalRotate(new Vector3(0f, 0f, jitteredTarget + overshoot),
+                    _spinSettings.Duration, RotateMode.FastBeyond360)
+                .SetEase(_spinSettings.SpinEase);
+
+            if (_indicatorImage != null && _spinSettings.TickRotation > 0f)
+            {
+                mainSpin.OnUpdate(() =>
+                {
+                    float z = _animTarget.localEulerAngles.z;
+                    int slot = Mathf.FloorToInt(z / sliceAngle);
+                    if (slot != _lastTickSlot)
+                    {
+                        _lastTickSlot = slot;
+                        PlayIndicatorTick();
+                    }
+                });
+            }
+
+            _spinSequence.Append(mainSpin);
 
             if (overshoot > 0f)
             {
@@ -125,18 +158,51 @@ namespace VertigoCase.UI
                         .SetEase(Ease.InOutSine));
             }
 
+            _spinSequence.AppendCallback(() => RevealResult(sliceIndex));
+
             if (_spinSettings.ResultHoldTime > 0f)
                 _spinSequence.AppendInterval(_spinSettings.ResultHoldTime);
 
-            _spinSequence.OnComplete(() =>
-            {
-                if (sliceIndex >= 0 && sliceIndex < _sliceCount && _slices != null)
-                    _slices[sliceIndex].Highlight();
-
-                onComplete?.Invoke();
-            });
-
+            _spinSequence.OnComplete(() => onComplete?.Invoke());
             _spinSequence.SetLink(gameObject);
+        }
+
+        public void PlayBombHit(Action onComplete)
+        {
+            var rt = _animTarget as RectTransform;
+            if (rt == null)
+            {
+                onComplete?.Invoke();
+                return;
+            }
+
+            rt.DOShakeAnchorPos(
+                    _spinSettings.BombShakeDuration,
+                    _spinSettings.BombShakeStrength,
+                    _spinSettings.BombShakeVibrato)
+                .SetLink(gameObject)
+                .OnComplete(() => onComplete?.Invoke());
+        }
+
+        public void StartIdlePulse()
+        {
+            if (_spinButton == null || _spinSettings == null) return;
+            StopIdlePulse();
+
+            var target = _spinButton.transform;
+            _idlePulseTween = target
+                .DOScale(1f + _spinSettings.IdlePulseStrength, _spinSettings.IdlePulseDuration)
+                .SetEase(Ease.InOutSine)
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetLink(gameObject);
+        }
+
+        public void StopIdlePulse()
+        {
+            _idlePulseTween?.Kill();
+            _idlePulseTween = null;
+            if (_spinButton != null)
+                _spinButton.transform.localScale = Vector3.one;
         }
 
         public void TransitionTo(IWheelDefinition wheel, WheelConfigSO visuals, int zone,
@@ -171,7 +237,10 @@ namespace VertigoCase.UI
             if (_slices == null || sliceIndex < 0 || sliceIndex >= _sliceCount)
                 return null;
 
-            return _slices[sliceIndex].GetComponent<RectTransform>();
+            var sliceRt = _slices[sliceIndex].GetComponent<RectTransform>();
+            if (sliceRt.childCount > 0)
+                return sliceRt.GetChild(0) as RectTransform;
+            return sliceRt;
         }
 
         public void SetInteractable(bool interactable)
@@ -217,11 +286,52 @@ namespace VertigoCase.UI
             _spinSequence = null;
             _transitionSequence?.Kill();
             _transitionSequence = null;
+            _idlePulseTween?.Kill();
+            _idlePulseTween = null;
+            _tickTween?.Kill();
+            _tickTween = null;
         }
 
         private void HandleSpinClicked()
         {
             SpinClicked?.Invoke();
+        }
+
+        private void PlayIndicatorTick()
+        {
+            _tickTween?.Kill();
+            var indicatorRt = _indicatorImage.GetComponent<RectTransform>();
+            indicatorRt.localRotation = Quaternion.identity;
+            _tickTween = indicatorRt
+                .DOPunchRotation(new Vector3(0f, 0f, -_spinSettings.TickRotation),
+                    _spinSettings.TickDuration, 1, 0f)
+                .SetLink(gameObject);
+        }
+
+        private void RevealResult(int sliceIndex)
+        {
+            if (_slices == null || _sliceCount <= 0) return;
+
+            for (int i = 0; i < _sliceCount; i++)
+            {
+                if (i == sliceIndex)
+                {
+                    _slices[i].Highlight(
+                        _spinSettings.HighlightPunchStrength,
+                        _spinSettings.HighlightPunchDuration);
+                }
+                else
+                {
+                    _slices[i].SetDim(_spinSettings.DimAlpha, 0.2f);
+                }
+            }
+        }
+
+        private void ResetSliceVisuals()
+        {
+            if (_slices == null) return;
+            for (int i = 0; i < _sliceCount; i++)
+                _slices[i].ResetVisual();
         }
 
         private void NormalizeRotation()

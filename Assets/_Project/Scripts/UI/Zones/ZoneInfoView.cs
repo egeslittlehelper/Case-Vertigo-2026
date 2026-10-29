@@ -20,6 +20,12 @@ namespace VertigoCase.UI
         private int _lastSuper;
         private int _lastSafe;
 
+        private void Awake()
+        {
+            EnableAutoSizing(_superValueText);
+            EnableAutoSizing(_safeValueText);
+        }
+
         public void Set(int nextSafe, int nextSuper)
         {
             bool safeChanged = nextSafe != _lastSafe;
@@ -47,6 +53,15 @@ namespace VertigoCase.UI
             panel.localScale = Vector3.one;
             panel.DOPunchScale(Vector3.one * _punchScale, _punchDuration, 1, 0.5f)
                 .SetLink(panel.gameObject);
+        }
+
+        private static void EnableAutoSizing(TMP_Text text)
+        {
+            if (text == null) return;
+            text.enableAutoSizing = true;
+            text.fontSizeMin = 14f;
+            text.fontSizeMax = 60f;
+            text.alignment = TextAlignmentOptions.Center;
         }
 
         protected override void OnValidate()

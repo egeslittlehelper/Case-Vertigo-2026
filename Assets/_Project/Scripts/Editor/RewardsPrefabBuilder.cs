@@ -55,10 +55,10 @@ namespace VertigoCase.Editor
             var root = CreateUI("ui_reward_entry");
             root.AddComponent<RewardEntryView>();
             var le = root.AddComponent<LayoutElement>();
-            le.preferredHeight = 200f;
+            le.preferredHeight = 80f;
             le.flexibleWidth = 1f;
             var rootRt = root.GetComponent<RectTransform>();
-            rootRt.sizeDelta = new Vector2(0f, 200f);
+            rootRt.sizeDelta = new Vector2(0f, 80f);
 
             var animObj = CreateUIChild(root, "ui_anim_reward_entry");
             var animRt = animObj.GetComponent<RectTransform>();
@@ -66,20 +66,19 @@ namespace VertigoCase.Editor
             animRt.anchorMax = Vector2.one;
             animRt.sizeDelta = Vector2.zero;
 
-            // Icon — fixed 64x64, right-aligned in left half, preserveAspect
+            // Icon — anchor-based, left 45% of entry, with padding
             var iconObj = CreateUIChild(animObj, "ui_image_reward_icon_value");
             var iconImg = iconObj.AddComponent<Image>();
             iconImg.raycastTarget = false;
             iconImg.maskable = false;
             iconImg.preserveAspect = true;
             var iconRt = iconObj.GetComponent<RectTransform>();
-            iconRt.anchorMin = new Vector2(0.5f, 0.5f);
-            iconRt.anchorMax = new Vector2(0.5f, 0.5f);
-            iconRt.pivot = new Vector2(1f, 0.5f);
-            iconRt.sizeDelta = new Vector2(128f, 128f);
-            iconRt.anchoredPosition = new Vector2(-8f, 0f);
+            iconRt.anchorMin = new Vector2(0.05f, 0.05f);
+            iconRt.anchorMax = new Vector2(0.45f, 0.95f);
+            iconRt.sizeDelta = Vector2.zero;
+            iconRt.anchoredPosition = Vector2.zero;
 
-            // Amount — right 50%, left-aligned, 3x font size
+            // Amount — right 50%, left-aligned, with left padding for gap from icon
             var textObj = CreateUIChild(animObj, "ui_text_reward_amount_value");
             var tmp = textObj.AddComponent<TextMeshProUGUI>();
             tmp.raycastTarget = false;
@@ -87,16 +86,16 @@ namespace VertigoCase.Editor
             tmp.text = "0";
             tmp.alignment = TextAlignmentOptions.Left;
             tmp.verticalAlignment = VerticalAlignmentOptions.Middle;
-            tmp.fontSize = 120f;
+            tmp.fontSize = 36f;
             tmp.fontStyle = FontStyles.Bold;
             tmp.enableAutoSizing = true;
-            tmp.fontSizeMin = 48f;
-            tmp.fontSizeMax = 120f;
+            tmp.fontSizeMin = 14f;
+            tmp.fontSizeMax = 36f;
             var textRt = textObj.GetComponent<RectTransform>();
             textRt.anchorMin = new Vector2(0.5f, 0f);
-            textRt.anchorMax = new Vector2(1f, 1f);
-            textRt.offsetMin = new Vector2(4f, 0f);
-            textRt.offsetMax = new Vector2(-4f, 0f);
+            textRt.anchorMax = new Vector2(0.98f, 1f);
+            textRt.sizeDelta = Vector2.zero;
+            textRt.anchoredPosition = Vector2.zero;
 
             PrefabUtility.SaveAsPrefabAsset(root, path);
             Object.DestroyImmediate(root);

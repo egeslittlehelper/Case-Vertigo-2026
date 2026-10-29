@@ -14,39 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.WheelConfigSO
   _zoneType: 1
   _slices:
-  - _reward: {fileID: 11400000, guid: f7b8e19f90e54f34caadcfa930beefaa, type: 2}
-    _baseAmount: 7
-    _weight: 1
-    _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
-    _baseAmount: 7
-    _weight: 1
-    _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
-    _baseAmount: 7
+  - _reward: {fileID: 11400000, guid: fa6c3afd54b5f304b84d6a68aeacf0a4, type: 2}
+    _baseAmount: 5
     _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
+  - _reward: {fileID: 11400000, guid: f8a1ec81c4cb89440a56ba4ff9bcad73, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
+  - _reward: {fileID: 11400000, guid: ad34eb91374560e499099b389fa8739c, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 1f237071dc7a90d45a52dae39665a086, type: 2}
+  - _reward: {fileID: 11400000, guid: 83bc52e0f173e9e42a9a34aa5c85a28f, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
+  - _reward: {fileID: 11400000, guid: 0c6c0d499a5edf94297003f2b7618dfd, type: 2}
+    _baseAmount: 2
+    _weight: 1
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: ad34eb91374560e499099b389fa8739c, type: 2}
     _baseAmount: 1
+    _weight: 1
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: 0c6c0d499a5edf94297003f2b7618dfd, type: 2}
+    _baseAmount: 1000
     _weight: 1
     _isBomb: 0
   _wheelBaseSprite: {fileID: 5770997025872212153, guid: 0db21750281f93e4cac3a21406203798, type: 3}
   _indicatorSprite: {fileID: 8294000708589155680, guid: 103edf8018e621045be6ae8e20cbb1c9, type: 3}
-  _titleText: SPIN
-  _titleColor: {r: 1, g: 1, b: 1, a: 1}
+  _titleText: GOLDEN SPIN
+  _titleColor: {r: 1, g: 0.78336114, b: 0.4009434, a: 1}

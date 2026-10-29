@@ -193,6 +193,7 @@ MonoBehaviour:
   _button: {fileID: 5509041772378611415}
   _canvasGroup: {fileID: 6504614855490076679}
   _fadeDuration: 0.25
+  _disabledAlpha: 0.35
 --- !u!225 &6504614855490076679
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6449055623034051758, guid: c6d834a83ad8a05489a74c4c91e4f3d3, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

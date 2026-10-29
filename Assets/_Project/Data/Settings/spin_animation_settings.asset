@@ -18,3 +18,17 @@ MonoBehaviour:
   _landingJitter: 0.2
   _resultHoldTime: 0.5
   _tickPunchStrength: 0.15
+  _anticipationAngle: 10
+  _anticipationDuration: 0.15
+  _settleOvershoot: 5
+  _settleDuration: 0.4
+  _tickRotation: 30
+  _tickDuration: 0.06
+  _idlePulseStrength: 0.06
+  _idlePulseDuration: 0.8
+  _bombShakeStrength: 20
+  _bombShakeDuration: 0.5
+  _bombShakeVibrato: 15
+  _highlightPunchStrength: 0.25
+  _highlightPunchDuration: 0.35
+  _dimAlpha: 0.4

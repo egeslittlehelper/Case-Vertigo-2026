@@ -14,39 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.WheelConfigSO
   _zoneType: 0
   _slices:
-  - _reward: {fileID: 0}
+  - _reward: {fileID: 11400000, guid: 9d817a098e947fd4ca5bd5faee264ef3, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 1
-  - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 1
-    _weight: 1
+  - _reward: {fileID: 11400000, guid: 5fc3a17b95902e045a4300c238103148, type: 2}
+    _baseAmount: 5
+    _weight: 5
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
-    _baseAmount: 1
-    _weight: 1
+    _baseAmount: 5000
+    _weight: 5
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 1
-    _weight: 1
+  - _reward: {fileID: 11400000, guid: e8efb1046e1f28b42a1b1ae1b8b19cc9, type: 2}
+    _baseAmount: 2
+    _weight: 5
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 1
-    _weight: 1
+    _baseAmount: 2
+    _weight: 5
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: 0c65a5c4a5ff1644baa84c1df3265c2f, type: 2}
+    _baseAmount: 5
+    _weight: 5
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
     _baseAmount: 1
-    _weight: 1
+    _weight: 5
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
     _baseAmount: 1
-    _weight: 1
-    _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
-    _baseAmount: 1
-    _weight: 1
+    _weight: 5
     _isBomb: 0
   _wheelBaseSprite: {fileID: -7416167051008218582, guid: 1c53200bd35948f4997af1ade9d26496, type: 3}
   _indicatorSprite: {fileID: 5759410588988491854, guid: 28cb77b6fea1bec478de3fee751e19c2, type: 3}
-  _titleText: SPIN
+  _titleText: 
   _titleColor: {r: 1, g: 1, b: 1, a: 1}

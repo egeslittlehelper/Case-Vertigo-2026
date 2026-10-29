@@ -15,6 +15,7 @@ namespace VertigoCase.UI
         [SerializeField] private ZoneCellView _cellPrefab;
         [SerializeField] private ZoneTypeColorsSO _colors;
         [SerializeField] private Image _highlightImage;
+        [SerializeField] private Image _highlightGradient;
 
         [Header("Highlight Sprites")]
         [SerializeField] private Sprite _highlightNormal;
@@ -39,8 +40,15 @@ namespace VertigoCase.UI
             _currentZone = startZone;
 
             BuildCells();
-            LayoutCells(startZone);
-            UpdateHighlight();
+
+            // Defer sizing to next frame — the highlight's AspectRatioFitter
+            // needs one layout pass before rect.width is resolved.
+            DOVirtual.DelayedCall(0f, () =>
+            {
+                MeasureAndSizeBar();
+                LayoutCells(startZone);
+                UpdateHighlight();
+            }).SetLink(gameObject);
         }
 
         public void AdvanceTo(int zone, bool animate)
@@ -79,6 +87,8 @@ namespace VertigoCase.UI
                 _cellContainer = ChildReference.FindChild<RectTransform>(transform, "ui_container_zone_cells");
             if (_highlightImage == null)
                 _highlightImage = ChildReference.FindChild<Image>(transform, "ui_image_zone_current_highlight");
+            if (_highlightGradient == null)
+                _highlightGradient = ChildReference.FindChild<Image>(transform, "ui_image_zone_current_gradient");
         }
 
         private void OnDisable()
@@ -91,16 +101,60 @@ namespace VertigoCase.UI
         {
             if (_cells != null) return;
 
-            _cells = new ZoneCellView[_visibleCount];
-            var prefabRt = _cellPrefab.GetComponent<RectTransform>();
-            _cellWidth = prefabRt.rect.width > 0 ? prefabRt.rect.width : 100f;
+            if (_highlightImage != null)
+            {
+                var highlightRt = _highlightImage.rectTransform;
+                var arf = highlightRt.GetComponent<AspectRatioFitter>();
+                if (arf == null) arf = highlightRt.gameObject.AddComponent<AspectRatioFitter>();
+                arf.aspectMode = AspectRatioFitter.AspectMode.HeightControlsWidth;
+                arf.aspectRatio = 1f;
+            }
 
+            if (_cellContainer != null)
+            {
+                _cellContainer.anchorMin = new Vector2(0.5f, 0f);
+                _cellContainer.anchorMax = new Vector2(0.5f, 1f);
+                _cellContainer.sizeDelta = Vector2.zero;
+            }
+
+            _cells = new ZoneCellView[_visibleCount];
             for (int i = 0; i < _visibleCount; i++)
             {
                 var cell = Instantiate(_cellPrefab, _cellContainer);
                 cell.name = "ui_zone_cell";
                 cell.EnableMaskable();
+
+                var cellRt = cell.GetComponent<RectTransform>();
+
+                var cellArf = cellRt.GetComponent<AspectRatioFitter>();
+                if (cellArf != null) Destroy(cellArf);
+
+                cellRt.anchorMin = new Vector2(0f, 0.5f);
+                cellRt.anchorMax = new Vector2(0f, 0.5f);
+                cellRt.pivot = new Vector2(0f, 0.5f);
+
                 _cells[i] = cell;
+            }
+        }
+
+        private void MeasureAndSizeBar()
+        {
+            if (_highlightImage != null)
+                _cellWidth = _highlightImage.rectTransform.rect.width;
+
+            if (_cellWidth <= 0)
+                _cellWidth = GetComponent<RectTransform>().rect.height;
+
+            if (_cellWidth <= 0)
+                _cellWidth = 140f;
+
+            var barRt = GetComponent<RectTransform>();
+            barRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _visibleCount * _cellWidth);
+
+            for (int i = 0; i < _cells.Length; i++)
+            {
+                var cellRt = _cells[i].GetComponent<RectTransform>();
+                cellRt.sizeDelta = new Vector2(_cellWidth, _cellWidth);
             }
         }
 
@@ -145,10 +199,10 @@ namespace VertigoCase.UI
 
             ZoneType type = _zoneRules.GetZoneType(_currentZone);
 
-            if (_highlightImage != null)
+            if (_highlightGradient != null)
             {
-                _highlightImage.sprite = GetHighlightSprite(type);
-                _highlightImage.color = Color.white;
+                _highlightGradient.sprite = GetHighlightSprite(type);
+                _highlightGradient.color = Color.white;
             }
 
             for (int i = 0; i < _visibleCount; i++)
@@ -203,7 +257,7 @@ namespace VertigoCase.UI
         private void SnapContainer()
         {
             int half = _visibleCount / 2;
-            float offset = -half * _cellWidth;
+            float offset = -(half + 0.5f) * _cellWidth;
             _cellContainer.anchoredPosition = new Vector2(offset, 0f);
         }
     }

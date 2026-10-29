@@ -90,7 +90,10 @@ namespace VertigoCase.UI
                 _confirmLossPopup.GoBackClicked += OnConfirmGoBack;
             }
             if (_cashOutPopup != null)
+            {
                 _cashOutPopup.ContinueClicked += OnContinue;
+                _cashOutPopup.GoBackClicked += OnCashOutGoBack;
+            }
 
             if (_wallet != null)
                 _wallet.BalanceChanged += OnBalanceChanged;
@@ -118,7 +121,11 @@ namespace VertigoCase.UI
                 _walletView.SetBalance(_wallet.Balance, animate: false);
 
                 if (!string.IsNullOrEmpty(_currencyId) && _catalog.TryGetIcon(_currencyId, out Sprite icon))
+                {
                     _walletView.SetIcon(icon);
+                    if (_bombPopup != null)
+                        _bombPopup.SetCurrencyIcon(icon);
+                }
             }
 
             UpdateZoneInfo(zone);
@@ -148,7 +155,10 @@ namespace VertigoCase.UI
                 _confirmLossPopup.GoBackClicked -= OnConfirmGoBack;
             }
             if (_cashOutPopup != null)
+            {
                 _cashOutPopup.ContinueClicked -= OnContinue;
+                _cashOutPopup.GoBackClicked -= OnCashOutGoBack;
+            }
 
             if (_wallet != null)
                 _wallet.BalanceChanged -= OnBalanceChanged;
@@ -157,6 +167,8 @@ namespace VertigoCase.UI
         private void OnSpinClicked()
         {
             if (!_session.CanSpin) return;
+
+            _wheelView.StopIdlePulse();
 
             if (_exitButton != null)
                 _exitButton.SetVisible(false, animate: false);
@@ -204,6 +216,7 @@ namespace VertigoCase.UI
                     {
                         _rewardsView.AddOrUpdate(id, icon, newTotal, animate: true);
                         _wheelView.SetInteractable(_session.CanSpin);
+                        if (_session.CanSpin) _wheelView.StartIdlePulse();
                     });
                     return;
                 }
@@ -211,14 +224,18 @@ namespace VertigoCase.UI
 
             _rewardsView.AddOrUpdate(id, icon, newTotal, animate: true);
             _wheelView.SetInteractable(_session.CanSpin);
+            if (_session.CanSpin) _wheelView.StartIdlePulse();
         }
 
         private void OnBombHit(SpinResult result)
         {
             _wheelView.SetInteractable(false);
 
-            if (_bombPopup != null)
-                ShowBombPopup();
+            _wheelView.PlayBombHit(() =>
+            {
+                if (_bombPopup != null)
+                    ShowBombPopup();
+            });
         }
 
         private void OnCashedOut(IReadOnlyList<RewardStack> rewards)
@@ -228,14 +245,23 @@ namespace VertigoCase.UI
             if (_exitButton != null)
                 _exitButton.SetVisible(false, animate: false);
 
-            if (_cashOutPopup != null)
-                _cashOutPopup.Show(rewards, _catalog);
+            _session.Restart();
         }
 
         private void OnExitClicked()
         {
             if (!_session.CanExit) return;
-            _session.CashOut();
+
+            if (_cashOutPopup != null)
+            {
+                _wheelView.SetInteractable(false);
+                _wheelView.StopIdlePulse();
+                _cashOutPopup.Show(_session.CollectedRewards, _catalog);
+            }
+            else
+            {
+                _session.CashOut();
+            }
         }
 
         private void OnGiveUpRequested()
@@ -301,7 +327,22 @@ namespace VertigoCase.UI
         private void OnContinue()
         {
             if (_cashOutPopup != null)
-                _cashOutPopup.Hide(() => _session.Restart());
+                _cashOutPopup.Hide(() =>
+                {
+                    _session.CashOut();
+                });
+        }
+
+        private void OnCashOutGoBack()
+        {
+            if (_cashOutPopup != null)
+            {
+                _cashOutPopup.Hide(() =>
+                {
+                    _wheelView.SetInteractable(_session.CanSpin);
+                    if (_session.CanSpin) _wheelView.StartIdlePulse();
+                });
+            }
         }
 
         private void OnRunReset()
@@ -333,6 +374,11 @@ namespace VertigoCase.UI
                 _wheelView.Bind(wheel, visuals, zone, _scaling, _catalog);
 
             _wheelView.SetInteractable(_session.CanSpin);
+
+            if (_session.CanSpin)
+                _wheelView.StartIdlePulse();
+            else
+                _wheelView.StopIdlePulse();
         }
 
         private void UpdateZoneInfo(int zone)

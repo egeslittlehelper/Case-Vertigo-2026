@@ -19,6 +19,16 @@ namespace VertigoCase.UI
 
         public int Zone => _zone;
 
+        private void Awake()
+        {
+            if (_numberText != null)
+            {
+                _numberText.enableAutoSizing = true;
+                _numberText.fontSizeMin = 14f;
+                _numberText.fontSizeMax = 100f;
+            }
+        }
+
         public void Set(int zone, ZoneType type, ZoneTypeColorsSO colors, bool isCurrent = false)
         {
             _zone = zone;

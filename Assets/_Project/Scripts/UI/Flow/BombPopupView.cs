@@ -16,9 +16,19 @@ namespace VertigoCase.UI
         [SerializeField] private Button _giveUpButton;
         [SerializeField] private Button _reviveButton;
         [SerializeField] private TMP_Text _reviveCostText;
+        [SerializeField] private Image _reviveCostIcon;
 
         public event Action GiveUpClicked;
         public event Action ReviveClicked;
+
+        public void SetCurrencyIcon(Sprite icon)
+        {
+            if (_reviveCostIcon != null)
+            {
+                _reviveCostIcon.sprite = icon;
+                _reviveCostIcon.enabled = icon != null;
+            }
+        }
 
         public void Show(int lostCount, bool canRevive, int reviveCost)
         {
@@ -52,6 +62,8 @@ namespace VertigoCase.UI
                 _reviveButton = ChildReference.FindChild<Button>(transform, "ui_button_popup_bomb_revive");
             if (_reviveCostText == null)
                 _reviveCostText = ChildReference.FindChild<TMP_Text>(transform, "ui_text_popup_bomb_revive_cost_value");
+            if (_reviveCostIcon == null)
+                _reviveCostIcon = ChildReference.FindChild<Image>(transform, "ui_image_popup_bomb_revive_icon_value");
         }
 
         private void OnEnable()

@@ -14,39 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.WheelConfigSO
   _zoneType: 2
   _slices:
-  - _reward: {fileID: 11400000, guid: 0c6c0d499a5edf94297003f2b7618dfd, type: 2}
+  - _reward: {fileID: 11400000, guid: 8d24e5c8b7ffa884998e65ee47e5e819, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
+  - _reward: {fileID: 11400000, guid: de4fab967ca74e34fad844170d99780d, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
+  - _reward: {fileID: 11400000, guid: f7b8e19f90e54f34caadcfa930beefaa, type: 2}
+    _baseAmount: 2
+    _weight: 1
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: babcc636533987642b4383e834247999, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 1
-    _weight: 1
-    _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
-    _baseAmount: 1
-    _weight: 1
-    _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
+  - _reward: {fileID: 11400000, guid: 5a702947bb6b05a488f8b47907505b69, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
   - _reward: {fileID: 11400000, guid: 8649d559ccb8677448f2e9e3e5d9fc02, type: 2}
     _baseAmount: 1
+    _weight: 10
+    _isBomb: 0
+  - _reward: {fileID: 11400000, guid: 3f7b0d0cdabb72c4d89db26ee14904d8, type: 2}
+    _baseAmount: 1
     _weight: 1
     _isBomb: 0
-  - _reward: {fileID: 11400000, guid: 5d0b7a3c196f0274f9c9401274de4391, type: 2}
+  - _reward: {fileID: 11400000, guid: c0a2ca7d791528a4f97d700cca4a1a30, type: 2}
     _baseAmount: 1
     _weight: 1
     _isBomb: 0
   _wheelBaseSprite: {fileID: -4250264824657568362, guid: 133f9066f4575374c9560a407d958dc1, type: 3}
   _indicatorSprite: {fileID: 2528496851094761378, guid: a66f3f292a0e3504c995ce18a36b1db0, type: 3}
-  _titleText: SPIN
+  _titleText: SAFE SPIN
   _titleColor: {r: 1, g: 1, b: 1, a: 1}

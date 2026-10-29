@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: zone_type_colors
   m_EditorClassIdentifier: VertigoCase.Data::VertigoCase.Data.ZoneTypeColorsSO
   _normal: {r: 1, g: 1, b: 1, a: 1}
-  _safe: {r: 0.2, g: 0.8, b: 0.2, a: 1}
+  _safe: {r: 0.2, g: 0.8, b: 1, a: 1}
   _super: {r: 1, g: 0.84, b: 0, a: 1}
+  _highlightNormal: {r: 1, g: 1, b: 1, a: 1}
+  _highlightSafe: {r: 0.2, g: 0.8, b: 0.2, a: 1}
+  _highlightSuper: {r: 1, g: 0.84, b: 0, a: 1}
+  _currentTextNormal: {r: 0, g: 0, b: 0, a: 1}
+  _currentTextSafe: {r: 1, g: 1, b: 1, a: 1}
+  _currentTextSuper: {r: 1, g: 1, b: 1, a: 1}

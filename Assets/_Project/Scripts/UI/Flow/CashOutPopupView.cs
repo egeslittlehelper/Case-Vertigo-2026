@@ -18,11 +18,13 @@ namespace VertigoCase.UI
         [SerializeField] private Transform _rewardListContainer;
         [SerializeField] private RewardEntryView _entryPrefab;
         [SerializeField] private Button _continueButton;
+        [SerializeField] private Button _goBackButton;
 
         private readonly List<RewardEntryView> _activeEntries = new();
         private ObjectPool<RewardEntryView> _pool;
 
         public event Action ContinueClicked;
+        public event Action GoBackClicked;
 
         public void Initialize()
         {
@@ -37,6 +39,7 @@ namespace VertigoCase.UI
             for (int i = 0; i < rewards.Count; i++)
             {
                 RewardEntryView entry = _pool.Get();
+                entry.EnableMaskable();
                 catalog.TryGetIcon(rewards[i].Reward.Id, out Sprite icon);
                 entry.Set(icon, rewards[i].Amount);
                 _activeEntries.Add(entry);
@@ -66,6 +69,8 @@ namespace VertigoCase.UI
                 _rewardListContainer = ChildReference.FindChild<Transform>(transform, "ui_container_popup_cashout_rewards");
             if (_continueButton == null)
                 _continueButton = ChildReference.FindChild<Button>(transform, "ui_button_popup_cashout_continue");
+            if (_goBackButton == null)
+                _goBackButton = ChildReference.FindChild<Button>(transform, "ui_button_popup_cashout_back");
 #if UNITY_EDITOR
             if (_entryPrefab == null)
             {
@@ -81,16 +86,21 @@ namespace VertigoCase.UI
         {
             if (_continueButton != null)
                 _continueButton.onClick.AddListener(HandleContinue);
+            if (_goBackButton != null)
+                _goBackButton.onClick.AddListener(HandleGoBack);
         }
 
         protected override void OnDisable()
         {
             if (_continueButton != null)
                 _continueButton.onClick.RemoveListener(HandleContinue);
+            if (_goBackButton != null)
+                _goBackButton.onClick.RemoveListener(HandleGoBack);
             base.OnDisable();
         }
 
         private void HandleContinue() => ContinueClicked?.Invoke();
+        private void HandleGoBack() => GoBackClicked?.Invoke();
 
         private void ClearEntries()
         {

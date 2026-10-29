@@ -32,7 +32,7 @@ namespace VertigoCase.Editor
             var root = CreateUI("ui_zone_cell");
             root.AddComponent<ZoneCellView>();
             var rootRt = root.GetComponent<RectTransform>();
-            rootRt.sizeDelta = new Vector2(140f, 120f);
+            rootRt.sizeDelta = new Vector2(140f, 140f);
 
             var textObj = CreateUIChild(root, "ui_text_zone_number_value");
             var tmp = textObj.AddComponent<TextMeshProUGUI>();
@@ -42,6 +42,9 @@ namespace VertigoCase.Editor
             tmp.alignment = TextAlignmentOptions.Center;
             tmp.fontSize = 56f;
             tmp.fontStyle = FontStyles.Bold;
+            tmp.enableAutoSizing = true;
+            tmp.fontSizeMin = 14f;
+            tmp.fontSizeMax = 100f;
             var textRt = textObj.GetComponent<RectTransform>();
             textRt.anchorMin = Vector2.zero;
             textRt.anchorMax = Vector2.one;
@@ -59,10 +62,10 @@ namespace VertigoCase.Editor
             var root = CreateUI("ui_panel_zone_bar");
             var barView = root.AddComponent<ZoneBarView>();
             var rootRt = root.GetComponent<RectTransform>();
-            rootRt.anchorMin = new Vector2(0f, 1f);
-            rootRt.anchorMax = new Vector2(1f, 1f);
+            rootRt.anchorMin = new Vector2(0.5f, 1f);
+            rootRt.anchorMax = new Vector2(0.5f, 1f);
             rootRt.pivot = new Vector2(0.5f, 1f);
-            rootRt.sizeDelta = new Vector2(-16f, 140f);
+            rootRt.sizeDelta = new Vector2(1820f, 140f);
             rootRt.anchoredPosition = new Vector2(0f, -12f);
 
             var frameObj = CreateUIChild(root, "ui_image_zone_bar_frame");
@@ -81,16 +84,31 @@ namespace VertigoCase.Editor
             highlightBg.maskable = false;
             highlightBg.type = Image.Type.Sliced;
             highlightBg.color = Color.white;
+            highlightObj.AddComponent<Mask>().showMaskGraphic = false;
+            var arf = highlightObj.AddComponent<AspectRatioFitter>();
+            arf.aspectMode = AspectRatioFitter.AspectMode.HeightControlsWidth;
+            arf.aspectRatio = 1f;
             var highlightRt = highlightObj.GetComponent<RectTransform>();
             highlightRt.anchorMin = new Vector2(0.5f, 0f);
             highlightRt.anchorMax = new Vector2(0.5f, 1f);
             highlightRt.pivot = new Vector2(0.5f, 0.5f);
             highlightRt.sizeDelta = new Vector2(140f, 0f);
 
+            var gradientObj = CreateUIChild(highlightObj, "ui_image_zone_current_gradient");
+            var gradientImg = gradientObj.AddComponent<Image>();
+            gradientImg.raycastTarget = false;
+            gradientImg.maskable = true;
+            gradientImg.type = Image.Type.Sliced;
+            gradientImg.color = Color.white;
+            var gradientRt = gradientObj.GetComponent<RectTransform>();
+            gradientRt.anchorMin = Vector2.zero;
+            gradientRt.anchorMax = Vector2.one;
+            gradientRt.sizeDelta = Vector2.zero;
+
             var highlightFrameObj = CreateUIChild(highlightObj, "ui_image_zone_current_frame");
             var highlightFrame = highlightFrameObj.AddComponent<Image>();
             highlightFrame.raycastTarget = false;
-            highlightFrame.maskable = false;
+            highlightFrame.maskable = true;
             highlightFrame.type = Image.Type.Sliced;
             var frameHighlightRt = highlightFrameObj.GetComponent<RectTransform>();
             frameHighlightRt.anchorMin = Vector2.zero;
@@ -106,20 +124,23 @@ namespace VertigoCase.Editor
 
             var cellsObj = CreateUIChild(maskObj, "ui_container_zone_cells");
             var cellsRt = cellsObj.GetComponent<RectTransform>();
-            cellsRt.anchorMin = new Vector2(0.5f, 0.5f);
-            cellsRt.anchorMax = new Vector2(0.5f, 0.5f);
+            cellsRt.anchorMin = new Vector2(0.5f, 0f);
+            cellsRt.anchorMax = new Vector2(0.5f, 1f);
             cellsRt.pivot = new Vector2(0f, 0.5f);
             cellsRt.sizeDelta = Vector2.zero;
+
+            var so = new SerializedObject(barView);
+            so.FindProperty("_highlightImage").objectReferenceValue = highlightBg;
+            so.FindProperty("_highlightGradient").objectReferenceValue = gradientImg;
 
             var cellPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(cellPrefabPath);
             if (cellPrefab != null)
             {
-                var so = new SerializedObject(barView);
                 so.FindProperty("_cellPrefab").objectReferenceValue =
                     cellPrefab.GetComponent<ZoneCellView>();
                 so.FindProperty("_cellContainer").objectReferenceValue = cellsRt;
-                so.ApplyModifiedPropertiesWithoutUndo();
             }
+            so.ApplyModifiedPropertiesWithoutUndo();
 
             PrefabUtility.SaveAsPrefabAsset(root, path);
             Object.DestroyImmediate(root);
@@ -132,30 +153,32 @@ namespace VertigoCase.Editor
             var root = CreateUI("ui_panel_zone_info");
             root.AddComponent<ZoneInfoView>();
             var rootRt = root.GetComponent<RectTransform>();
-            rootRt.anchorMin = new Vector2(1f, 1f);
+            rootRt.anchorMin = new Vector2(0.82f, 0.88f);
             rootRt.anchorMax = new Vector2(1f, 1f);
             rootRt.pivot = new Vector2(1f, 1f);
-            rootRt.sizeDelta = new Vector2(300f, 180f);
+            rootRt.sizeDelta = Vector2.zero;
+            rootRt.offsetMax = new Vector2(-8f, 0f);
 
-            BuildInfoBadge(root, "super", "SUPER ZONE", "30",
-                new Color(1f, 0.84f, 0f, 0.3f), new Vector2(0f, 0f));
-            BuildInfoBadge(root, "safe", "SAFE ZONE", "15",
-                new Color(0.2f, 0.8f, 0.2f, 0.3f), new Vector2(0f, -85f));
+            BuildInfoBadge(root, "super", "SUPER\nZONE", "30",
+                new Color(1f, 0.84f, 0f, 0.3f),
+                new Vector2(0f, 0.52f), new Vector2(1f, 1f));
+            BuildInfoBadge(root, "safe", "SAFE\nZONE", "15",
+                new Color(0.2f, 0.8f, 0.2f, 0.3f),
+                new Vector2(0f, 0f), new Vector2(1f, 0.48f));
 
             PrefabUtility.SaveAsPrefabAsset(root, path);
             Object.DestroyImmediate(root);
         }
 
         private static void BuildInfoBadge(GameObject parent, string key, string label,
-            string defaultValue, Color bgColor, Vector2 position)
+            string defaultValue, Color bgColor, Vector2 anchorMin, Vector2 anchorMax)
         {
             var panel = CreateUIChild(parent, $"ui_panel_zone_info_{key}");
             var panelRt = panel.GetComponent<RectTransform>();
-            panelRt.anchorMin = new Vector2(0f, 1f);
-            panelRt.anchorMax = new Vector2(1f, 1f);
-            panelRt.pivot = new Vector2(0.5f, 1f);
-            panelRt.sizeDelta = new Vector2(0f, 75f);
-            panelRt.anchoredPosition = position;
+            panelRt.anchorMin = anchorMin;
+            panelRt.anchorMax = anchorMax;
+            panelRt.pivot = new Vector2(0.5f, 0.5f);
+            panelRt.sizeDelta = Vector2.zero;
 
             var bgObj = CreateUIChild(panel, $"ui_image_zone_info_{key}_bg");
             var bgImg = bgObj.AddComponent<Image>();
@@ -173,8 +196,11 @@ namespace VertigoCase.Editor
             labelTmp.raycastTarget = false;
             labelTmp.maskable = false;
             labelTmp.text = label;
-            labelTmp.fontSize = 22f;
-            labelTmp.alignment = TextAlignmentOptions.Left;
+            labelTmp.fontSize = 60f;
+            labelTmp.alignment = TextAlignmentOptions.Center;
+            labelTmp.enableAutoSizing = true;
+            labelTmp.fontSizeMin = 10f;
+            labelTmp.fontSizeMax = 60f;
             var labelRt = labelObj.GetComponent<RectTransform>();
             labelRt.anchorMin = new Vector2(0f, 0f);
             labelRt.anchorMax = new Vector2(0.65f, 1f);
@@ -186,9 +212,12 @@ namespace VertigoCase.Editor
             valueTmp.raycastTarget = false;
             valueTmp.maskable = false;
             valueTmp.text = defaultValue;
-            valueTmp.fontSize = 32f;
+            valueTmp.fontSize = 60f;
             valueTmp.fontStyle = FontStyles.Bold;
-            valueTmp.alignment = TextAlignmentOptions.Right;
+            valueTmp.alignment = TextAlignmentOptions.Center;
+            valueTmp.enableAutoSizing = true;
+            valueTmp.fontSizeMin = 14f;
+            valueTmp.fontSizeMax = 60f;
             var valueRt = valueObj.GetComponent<RectTransform>();
             valueRt.anchorMin = new Vector2(0.65f, 0f);
             valueRt.anchorMax = new Vector2(1f, 1f);
