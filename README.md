@@ -65,12 +65,13 @@ Core  (pure C#, no UnityEngine)
 
 128 EditMode unit tests covering core domain logic and pooling:
 
-- **GameSession** — spin, zone advancement, bomb, cash out, revive, reward collection
-- **GameStateMachine** — all legal/illegal state transitions
-- **SpinResolver** — weighted random selection, bomb-only edge cases
+- **GameSession** — spin, zone advancement, bomb, cash out, revive, illegal state transitions
+- **SpinResolver** — weighted random selection, deterministic seeding
 - **ZoneRules** — safe/super zone detection, zone type classification
 - **RewardInventory** — add, merge, clear, stack consolidation
+- **ReviveCost** — escalating cost calculation, policy behavior
 - **ObjectPool** — get, release, grow, reuse, parent assignment
+- **WheelAngleCalculator, NumberFormatter, CurveRewardScaling** — math and formatting utilities
 
 Run via Unity Test Runner (EditMode) or command line:
 ```
@@ -112,7 +113,7 @@ Assets/_Project/
 
 1. Open in **Unity 6000.3.23f1**
 2. Switch platform to **Android** (IL2CPP, ARM64)
-3. Open `Assets/_Project/Scenes/Game.unity`
+3. Open `Assets/_Project/Scenes/New Scene.unity`
 4. **VertigoCase > Validate UI Hierarchy** (should report 0 errors)
 5. Play in editor or **Build And Run** for APK
 
@@ -122,7 +123,6 @@ Assets/_Project/
 
 - Wallet balance persists via `PlayerPrefs` — a production game would use server-side storage.
 - No audio — the brief focuses on visual polish and game mechanics.
-- Reward icons and wheel art are placeholder sprites from the provided asset pack.
 - The revive system is a bonus feature; pricing is tunable via `EconomySettingsSO` but not balanced for a live economy.
 
 ## Third-Party
